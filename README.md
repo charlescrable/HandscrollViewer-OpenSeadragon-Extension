@@ -1,1 +1,1 @@
-# ScrollViewer---OpenSeadragon-Extension
+# HandscrollViewer-OpenSeadragon-Extension
