@@ -75,7 +75,21 @@
 						<p> HandscrollViewer class represents an image viewer, extending the generic OpenSeadragon viewer class.</p>
 					</div>
 					<p> HandscrollViewer is designed specifically for viewing East Asian handscoll painting images.</p>
-					<p> Extended features include: ??????</p>
+					<p> Extended features include:</p>
+					<ul>
+						<li><p>Standardized user interface including custom buttons and navigation control</p>
+						</li>
+						<li><p>Optional annotations can be added and controlled for specific images</p>
+						</li>
+						<li><p>Initial display and Home start at right edge of the image (per handscroll tradition)</p>
+						</li>
+						<li><p>Horizontal auto scroll with custom scroll speed control</p>
+						</li>
+						<li><p>Image and annotation information specified in separate metadata for ease of updating</p>
+						</li>
+						<li><p>Standard OpenSeadragon functionality (zoom in and out, image drag, etc.) are fully available</p>
+						</li>
+					</ul>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
@@ -105,6 +119,7 @@
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-not-exported"><a href="_handscrollviewer1_.handscrollviewer.html#autohorizontalscrolldirection" class="tsd-kind-icon">auto<wbr>Horizontal<wbr>Scroll<wbr>Direction</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-not-exported"><a href="_handscrollviewer1_.handscrollviewer.html#autoscrollleftopenseadragonbutton" class="tsd-kind-icon">auto<wbr>Scroll<wbr>Left<wbr>Open<wbr>Seadragon<wbr>Button</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-not-exported"><a href="_handscrollviewer1_.handscrollviewer.html#autoscrollrightopenseadragonbutton" class="tsd-kind-icon">auto<wbr>Scroll<wbr>Right<wbr>Open<wbr>Seadragon<wbr>Button</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-not-exported"><a href="_handscrollviewer1_.handscrollviewer.html#autoscrollspeedsetting" class="tsd-kind-icon">auto<wbr>Scroll<wbr>Speed<wbr>Setting</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-not-exported"><a href="_handscrollviewer1_.handscrollviewer.html#currentimageindex" class="tsd-kind-icon">current<wbr>Image<wbr>Index</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-not-exported"><a href="_handscrollviewer1_.handscrollviewer.html#currentscrollid" class="tsd-kind-icon">current<wbr>Scroll<wbr>Id</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-not-exported"><a href="_handscrollviewer1_.handscrollviewer.html#hideannotationsopenseadragonbutton" class="tsd-kind-icon">hide<wbr>Annotations<wbr>Open<wbr>Seadragon<wbr>Button</a></li>
@@ -139,9 +154,11 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="_handscrollviewer1_.handscrollviewer.html#displayscrollwithid" class="tsd-kind-icon">display<wbr>Scroll<wbr>With<wbr>Id</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-not-exported"><a href="_handscrollviewer1_.handscrollviewer.html#displaytestannotationlocation" class="tsd-kind-icon">display<wbr>Test<wbr>Annotation<wbr>Location</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-not-exported"><a href="_handscrollviewer1_.handscrollviewer.html#frameautohorizontalscroll" class="tsd-kind-icon">frame<wbr>Auto<wbr>Horizontal<wbr>Scroll</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="_handscrollviewer1_.handscrollviewer.html#getautoscrollspeedsetting" class="tsd-kind-icon">get<wbr>Auto<wbr>Scroll<wbr>Speed<wbr>Setting</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="_handscrollviewer1_.handscrollviewer.html#gotorightedge" class="tsd-kind-icon">goto<wbr>Right<wbr>Edge</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="_handscrollviewer1_.handscrollviewer.html#hideannotationstoggle" class="tsd-kind-icon">hide<wbr>Annotations<wbr>Toggle</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="_handscrollviewer1_.handscrollviewer.html#hidecontrolstoggle" class="tsd-kind-icon">hide<wbr>Controls<wbr>Toggle</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="_handscrollviewer1_.handscrollviewer.html#setautoscrollspeedsetting" class="tsd-kind-icon">set<wbr>Auto<wbr>Scroll<wbr>Speed<wbr>Setting</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="_handscrollviewer1_.handscrollviewer.html#showannotations" class="tsd-kind-icon">show<wbr>Annotations</a></li>
 							</ul>
 						</section>
@@ -166,7 +183,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in handscrollviewer1.ts:180</li>
+									<li>Defined in handscrollviewer1.ts:201</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -201,7 +218,7 @@
 					<div class="tsd-signature tsd-kind-icon">are<wbr>Annotations<wbr>Loaded<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;false</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in handscrollviewer1.ts:129</li>
+							<li>Defined in handscrollviewer1.ts:150</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -216,7 +233,7 @@
 					<div class="tsd-signature tsd-kind-icon">are<wbr>Annotations<wbr>Visible<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in handscrollviewer1.ts:132</li>
+							<li>Defined in handscrollviewer1.ts:153</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -231,7 +248,7 @@
 					<div class="tsd-signature tsd-kind-icon">are<wbr>Controls<wbr>Hidden<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;false</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in handscrollviewer1.ts:93</li>
+							<li>Defined in handscrollviewer1.ts:105</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -246,7 +263,7 @@
 					<div class="tsd-signature tsd-kind-icon">auto<wbr>Horizontal<wbr>Scroll<wbr>Direction<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;Direction.Left</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in handscrollviewer1.ts:84</li>
+							<li>Defined in handscrollviewer1.ts:96</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -261,7 +278,7 @@
 					<div class="tsd-signature tsd-kind-icon">auto<wbr>Scroll<wbr>Left<wbr>Open<wbr>Seadragon<wbr>Button<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;null</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in handscrollviewer1.ts:111</li>
+							<li>Defined in handscrollviewer1.ts:123</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -276,7 +293,7 @@
 					<div class="tsd-signature tsd-kind-icon">auto<wbr>Scroll<wbr>Right<wbr>Open<wbr>Seadragon<wbr>Button<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;null</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in handscrollviewer1.ts:105</li>
+							<li>Defined in handscrollviewer1.ts:117</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -285,13 +302,30 @@
 						</div>
 					</div>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-not-exported">
+					<a name="autoscrollspeedsetting" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> auto<wbr>Scroll<wbr>Speed<wbr>Setting</h3>
+					<div class="tsd-signature tsd-kind-icon">auto<wbr>Scroll<wbr>Speed<wbr>Setting<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;2</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in handscrollviewer1.ts:135</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Auto scroll speed setting</p>
+						</div>
+						<p> Number between 1.0 and 10.0 inclusive, with 1.0 the slowest and 10.0 the fastest auto scroll.</p>
+						<p> Default setting is 2.0.</p>
+					</div>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-not-exported">
 					<a name="currentimageindex" class="tsd-anchor"></a>
 					<h3>current<wbr>Image<wbr>Index</h3>
 					<div class="tsd-signature tsd-kind-icon">current<wbr>Image<wbr>Index<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;0</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in handscrollviewer1.ts:77</li>
+							<li>Defined in handscrollviewer1.ts:89</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -306,7 +340,7 @@
 					<div class="tsd-signature tsd-kind-icon">current<wbr>Scroll<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in handscrollviewer1.ts:74</li>
+							<li>Defined in handscrollviewer1.ts:86</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -321,7 +355,7 @@
 					<div class="tsd-signature tsd-kind-icon">hide<wbr>Annotations<wbr>Open<wbr>Seadragon<wbr>Button<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;null</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in handscrollviewer1.ts:99</li>
+							<li>Defined in handscrollviewer1.ts:111</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -336,7 +370,7 @@
 					<div class="tsd-signature tsd-kind-icon">hide<wbr>Controls<wbr>Element<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;null</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in handscrollviewer1.ts:117</li>
+							<li>Defined in handscrollviewer1.ts:138</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -351,7 +385,7 @@
 					<div class="tsd-signature tsd-kind-icon">hide<wbr>Controls<wbr>Open<wbr>Seadragon<wbr>Control<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;null</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in handscrollviewer1.ts:120</li>
+							<li>Defined in handscrollviewer1.ts:141</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -366,7 +400,7 @@
 					<div class="tsd-signature tsd-kind-icon">is<wbr>Auto<wbr>Scroll<wbr>Paused<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in handscrollviewer1.ts:87</li>
+							<li>Defined in handscrollviewer1.ts:99</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -381,7 +415,7 @@
 					<div class="tsd-signature tsd-kind-icon">prefix<wbr>Scroll<wbr>Url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;./buttonImages/&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in handscrollviewer1.ts:80</li>
+							<li>Defined in handscrollviewer1.ts:92</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -396,7 +430,7 @@
 					<div class="tsd-signature tsd-kind-icon">prev<wbr>Time<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;null</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in handscrollviewer1.ts:90</li>
+							<li>Defined in handscrollviewer1.ts:102</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -411,7 +445,7 @@
 					<div class="tsd-signature tsd-kind-icon">show<wbr>Annotations<wbr>Open<wbr>Seadragon<wbr>Button<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;null</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in handscrollviewer1.ts:102</li>
+							<li>Defined in handscrollviewer1.ts:114</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -426,7 +460,7 @@
 					<div class="tsd-signature tsd-kind-icon">show<wbr>Controls<wbr>Element<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;null</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in handscrollviewer1.ts:123</li>
+							<li>Defined in handscrollviewer1.ts:144</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -441,7 +475,7 @@
 					<div class="tsd-signature tsd-kind-icon">show<wbr>Controls<wbr>Open<wbr>Seadragon<wbr>Control<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;null</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in handscrollviewer1.ts:126</li>
+							<li>Defined in handscrollviewer1.ts:147</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -456,7 +490,7 @@
 					<div class="tsd-signature tsd-kind-icon">stop<wbr>Auto<wbr>Scroll<wbr>Left<wbr>Open<wbr>Seadragon<wbr>Button<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;null</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in handscrollviewer1.ts:114</li>
+							<li>Defined in handscrollviewer1.ts:126</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -471,7 +505,7 @@
 					<div class="tsd-signature tsd-kind-icon">stop<wbr>Auto<wbr>Scroll<wbr>Right<wbr>Open<wbr>Seadragon<wbr>Button<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;null</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in handscrollviewer1.ts:108</li>
+							<li>Defined in handscrollviewer1.ts:120</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -486,7 +520,7 @@
 					<div class="tsd-signature tsd-kind-icon">test<wbr>Div<wbr>Overlay<wbr>Exists<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;false</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in handscrollviewer1.ts:96</li>
+							<li>Defined in handscrollviewer1.ts:108</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -501,7 +535,7 @@
 					<div class="tsd-signature tsd-kind-icon">viewer<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;null</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in handscrollviewer1.ts:71</li>
+							<li>Defined in handscrollviewer1.ts:83</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -523,7 +557,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in handscrollviewer1.ts:1031</li>
+									<li>Defined in handscrollviewer1.ts:1084</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -546,13 +580,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in handscrollviewer1.ts:1071</li>
+									<li>Defined in handscrollviewer1.ts:1126</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<pre><code><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">method</span> <span class="hljs-title">that</span> <span class="hljs-title">adds</span> <span class="hljs-title">a</span> <span class="hljs-title">single</span> <span class="hljs-title">annotation</span> <span class="hljs-title">OpenSeadragon</span> <span class="hljs-title">overlay</span> <span class="hljs-title">div</span> <span class="hljs-title">at</span> <span class="hljs-title">the</span> <span class="hljs-title">passed</span> <span class="hljs-title">OpenSeadragon</span> <span class="hljs-title">viewPoint</span> <span class="hljs-title">with</span> <span class="hljs-title">passed</span> <span class="hljs-title">title</span> <span class="hljs-title">and</span> <span class="hljs-title">text</span></span></code></pre>
+									<p> Public method that adds a single annotation OpenSeadragon overlay div at the passed OpenSeadragon viewPoint with passed title and text.</p>
 								</div>
+								<p> The passed viewPoint is the location of the upper right corner of the annotation display.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -580,7 +615,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in handscrollviewer1.ts:897</li>
+									<li>Defined in handscrollviewer1.ts:950</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -602,14 +637,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in handscrollviewer1.ts:864</li>
+									<li>Defined in handscrollviewer1.ts:917</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Public method that toggles auto horizontal scroll left.
-									Either start auto horizontal scroll left, or pause auto scroll.</p>
+									<p> Public method that toggles auto horizontal scroll left.</p>
 								</div>
+								<p> Either start auto horizontal scroll left, or pause auto scroll.</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
@@ -625,13 +660,12 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in handscrollviewer1.ts:944</li>
+									<li>Defined in handscrollviewer1.ts:997</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Public method that stops auto horizontal scroll right.
-									??? Button update ???</p>
+									<p> Public method that stops auto horizontal scroll right.</p>
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -648,14 +682,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in handscrollviewer1.ts:911</li>
+									<li>Defined in handscrollviewer1.ts:965</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Public method that toggles auto horizontal scroll right.
-									Either start auto horizontal scroll right, or pause auto scroll.</p>
+									<p> Public method that toggles auto horizontal scroll right.</p>
 								</div>
+								<p> Either start auto horizontal scroll right, or pause auto scroll.</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
@@ -671,7 +705,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in handscrollviewer1.ts:424</li>
+									<li>Defined in handscrollviewer1.ts:479</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -694,7 +728,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in handscrollviewer1.ts:404</li>
+									<li>Defined in handscrollviewer1.ts:459</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -717,7 +751,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in handscrollviewer1.ts:451</li>
+									<li>Defined in handscrollviewer1.ts:506</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -740,7 +774,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in handscrollviewer1.ts:579</li>
+									<li>Defined in handscrollviewer1.ts:634</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -764,7 +798,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in handscrollviewer1.ts:627</li>
+									<li>Defined in handscrollviewer1.ts:682</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -788,7 +822,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in handscrollviewer1.ts:677</li>
+									<li>Defined in handscrollviewer1.ts:732</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -819,7 +853,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in handscrollviewer1.ts:487</li>
+									<li>Defined in handscrollviewer1.ts:542</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -853,7 +887,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in handscrollviewer1.ts:744</li>
+									<li>Defined in handscrollviewer1.ts:799</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -873,6 +907,28 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+					<a name="getautoscrollspeedsetting" class="tsd-anchor"></a>
+					<h3>get<wbr>Auto<wbr>Scroll<wbr>Speed<wbr>Setting</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Auto<wbr>Scroll<wbr>Speed<wbr>Setting<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in handscrollviewer1.ts:425</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p> Public getter method for autoScrollSpeedSetting property.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
 					<a name="gotorightedge" class="tsd-anchor"></a>
 					<h3>goto<wbr>Right<wbr>Edge</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
@@ -882,7 +938,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in handscrollviewer1.ts:850</li>
+									<li>Defined in handscrollviewer1.ts:902</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -904,14 +960,13 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in handscrollviewer1.ts:804</li>
+									<li>Defined in handscrollviewer1.ts:857</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p> Public method that toggles the display of annotations.</p>
 								</div>
-								<p> ??? Switch to separate hide and show methods ???</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
@@ -927,7 +982,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in handscrollviewer1.ts:957</li>
+									<li>Defined in handscrollviewer1.ts:1010</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -935,6 +990,35 @@
 									<p> Public method that toggles (show or hide) display of control buttons and navigation control.</p>
 								</div>
 							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+					<a name="setautoscrollspeedsetting" class="tsd-anchor"></a>
+					<h3>set<wbr>Auto<wbr>Scroll<wbr>Speed<wbr>Setting</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Auto<wbr>Scroll<wbr>Speed<wbr>Setting<span class="tsd-signature-symbol">(</span>newSpeedSetting<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in handscrollviewer1.ts:438</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p> Public setter method for the autoScrollSpeedSetting property.</p>
+								</div>
+								<p> newSpeedSetting parameter is clamped between 1.0 and 10.0.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>newSpeedSetting: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -949,7 +1033,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in handscrollviewer1.ts:833</li>
+									<li>Defined in handscrollviewer1.ts:885</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -970,7 +1054,7 @@
 					<div class="tsd-signature tsd-kind-icon">handscroll<wbr>Viewer<wbr>Options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in handscrollviewer1.ts:141</li>
+							<li>Defined in handscrollviewer1.ts:162</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -985,7 +1069,7 @@
 						<div class="tsd-signature tsd-kind-icon">constrain<wbr>During<wbr>Pan<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;false</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in handscrollviewer1.ts:161</li>
+								<li>Defined in handscrollviewer1.ts:182</li>
 							</ul>
 						</aside>
 					</section>
@@ -995,7 +1079,7 @@
 						<div class="tsd-signature tsd-kind-icon">controls<wbr>Fade<wbr>Delay<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;0</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in handscrollviewer1.ts:155</li>
+								<li>Defined in handscrollviewer1.ts:176</li>
 							</ul>
 						</aside>
 					</section>
@@ -1005,7 +1089,7 @@
 						<div class="tsd-signature tsd-kind-icon">controls<wbr>Fade<wbr>Length<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;1000</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in handscrollviewer1.ts:156</li>
+								<li>Defined in handscrollviewer1.ts:177</li>
 							</ul>
 						</aside>
 					</section>
@@ -1015,7 +1099,7 @@
 						<div class="tsd-signature tsd-kind-icon">home<wbr>Fills<wbr>Viewer<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in handscrollviewer1.ts:158</li>
+								<li>Defined in handscrollviewer1.ts:179</li>
 							</ul>
 						</aside>
 					</section>
@@ -1025,7 +1109,7 @@
 						<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;openseadragon1&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in handscrollviewer1.ts:143</li>
+								<li>Defined in handscrollviewer1.ts:164</li>
 							</ul>
 						</aside>
 					</section>
@@ -1035,7 +1119,7 @@
 						<div class="tsd-signature tsd-kind-icon">min<wbr>Zoom<wbr>Image<wbr>Ratio<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;0.9</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in handscrollviewer1.ts:159</li>
+								<li>Defined in handscrollviewer1.ts:180</li>
 							</ul>
 						</aside>
 					</section>
@@ -1045,7 +1129,7 @@
 						<div class="tsd-signature tsd-kind-icon">navigation<wbr>Control<wbr>Anchor<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;OpenSeadragon.ControlAnchor.TOP_LEFT</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in handscrollviewer1.ts:147</li>
+								<li>Defined in handscrollviewer1.ts:168</li>
 							</ul>
 						</aside>
 					</section>
@@ -1055,7 +1139,7 @@
 						<div class="tsd-signature tsd-kind-icon">navigator<wbr>Height<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;30px&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in handscrollviewer1.ts:152</li>
+								<li>Defined in handscrollviewer1.ts:173</li>
 							</ul>
 						</aside>
 					</section>
@@ -1065,7 +1149,7 @@
 						<div class="tsd-signature tsd-kind-icon">navigator<wbr>Left<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;320px&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in handscrollviewer1.ts:151</li>
+								<li>Defined in handscrollviewer1.ts:172</li>
 							</ul>
 						</aside>
 					</section>
@@ -1075,7 +1159,7 @@
 						<div class="tsd-signature tsd-kind-icon">navigator<wbr>Position<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;ABSOLUTE&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in handscrollviewer1.ts:149</li>
+								<li>Defined in handscrollviewer1.ts:170</li>
 							</ul>
 						</aside>
 					</section>
@@ -1085,7 +1169,7 @@
 						<div class="tsd-signature tsd-kind-icon">navigator<wbr>Top<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;3px&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in handscrollviewer1.ts:150</li>
+								<li>Defined in handscrollviewer1.ts:171</li>
 							</ul>
 						</aside>
 					</section>
@@ -1095,7 +1179,7 @@
 						<div class="tsd-signature tsd-kind-icon">navigator<wbr>Width<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;500px&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in handscrollviewer1.ts:153</li>
+								<li>Defined in handscrollviewer1.ts:174</li>
 							</ul>
 						</aside>
 					</section>
@@ -1105,7 +1189,7 @@
 						<div class="tsd-signature tsd-kind-icon">prefix<wbr>Url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;./openseadragon-bin-2.2.1/images/&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in handscrollviewer1.ts:145</li>
+								<li>Defined in handscrollviewer1.ts:166</li>
 							</ul>
 						</aside>
 					</section>
@@ -1115,7 +1199,7 @@
 						<div class="tsd-signature tsd-kind-icon">show<wbr>Navigator<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in handscrollviewer1.ts:148</li>
+								<li>Defined in handscrollviewer1.ts:169</li>
 							</ul>
 						</aside>
 					</section>
@@ -1125,7 +1209,7 @@
 						<div class="tsd-signature tsd-kind-icon">visibility<wbr>Ratio<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;0.9</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in handscrollviewer1.ts:160</li>
+								<li>Defined in handscrollviewer1.ts:181</li>
 							</ul>
 						</aside>
 					</section>
@@ -1135,7 +1219,7 @@
 						<div class="tsd-signature tsd-kind-icon">tile<wbr>Sources<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in handscrollviewer1.ts:163</li>
+								<li>Defined in handscrollviewer1.ts:184</li>
 							</ul>
 						</aside>
 						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
@@ -1144,7 +1228,7 @@
 							<div class="tsd-signature tsd-kind-icon">overlays<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[  ]</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in handscrollviewer1.ts:178</li>
+									<li>Defined in handscrollviewer1.ts:199</li>
 								</ul>
 							</aside>
 						</section>
@@ -1154,7 +1238,7 @@
 							<div class="tsd-signature tsd-kind-icon">Image<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in handscrollviewer1.ts:165</li>
+									<li>Defined in handscrollviewer1.ts:186</li>
 								</ul>
 							</aside>
 							<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
@@ -1163,7 +1247,7 @@
 								<div class="tsd-signature tsd-kind-icon">Format<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;jpeg&quot;</span></div>
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in handscrollviewer1.ts:169</li>
+										<li>Defined in handscrollviewer1.ts:190</li>
 									</ul>
 								</aside>
 							</section>
@@ -1173,7 +1257,7 @@
 								<div class="tsd-signature tsd-kind-icon">Overlap<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;1&quot;</span></div>
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in handscrollviewer1.ts:170</li>
+										<li>Defined in handscrollviewer1.ts:191</li>
 									</ul>
 								</aside>
 							</section>
@@ -1183,7 +1267,7 @@
 								<div class="tsd-signature tsd-kind-icon">Tile<wbr>Size<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;254&quot;</span></div>
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in handscrollviewer1.ts:171</li>
+										<li>Defined in handscrollviewer1.ts:192</li>
 									</ul>
 								</aside>
 							</section>
@@ -1193,7 +1277,7 @@
 								<div class="tsd-signature tsd-kind-icon">Url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;siteDziImages[this.currentImageIndex].Url</span></div>
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in handscrollviewer1.ts:168</li>
+										<li>Defined in handscrollviewer1.ts:189</li>
 									</ul>
 								</aside>
 							</section>
@@ -1203,7 +1287,7 @@
 								<div class="tsd-signature tsd-kind-icon">xmlns<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;http://schemas.microsoft.com/deepzoom/2008&quot;</span></div>
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in handscrollviewer1.ts:167</li>
+										<li>Defined in handscrollviewer1.ts:188</li>
 									</ul>
 								</aside>
 							</section>
@@ -1213,7 +1297,7 @@
 								<div class="tsd-signature tsd-kind-icon">Size<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in handscrollviewer1.ts:172</li>
+										<li>Defined in handscrollviewer1.ts:193</li>
 									</ul>
 								</aside>
 								<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
@@ -1222,7 +1306,7 @@
 									<div class="tsd-signature tsd-kind-icon">Height<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;siteDziImages[this.currentImageIndex].Height</span></div>
 									<aside class="tsd-sources">
 										<ul>
-											<li>Defined in handscrollviewer1.ts:174</li>
+											<li>Defined in handscrollviewer1.ts:195</li>
 										</ul>
 									</aside>
 								</section>
@@ -1232,7 +1316,7 @@
 									<div class="tsd-signature tsd-kind-icon">Width<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;siteDziImages[this.currentImageIndex].Width</span></div>
 									<aside class="tsd-sources">
 										<ul>
-											<li>Defined in handscrollviewer1.ts:175</li>
+											<li>Defined in handscrollviewer1.ts:196</li>
 										</ul>
 									</aside>
 								</section>
@@ -1283,6 +1367,9 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-not-exported">
 								<a href="_handscrollviewer1_.handscrollviewer.html#autoscrollrightopenseadragonbutton" class="tsd-kind-icon">auto<wbr>Scroll<wbr>Right<wbr>Open<wbr>Seadragon<wbr>Button</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-not-exported">
+								<a href="_handscrollviewer1_.handscrollviewer.html#autoscrollspeedsetting" class="tsd-kind-icon">auto<wbr>Scroll<wbr>Speed<wbr>Setting</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-not-exported">
 								<a href="_handscrollviewer1_.handscrollviewer.html#currentimageindex" class="tsd-kind-icon">current<wbr>Image<wbr>Index</a>
@@ -1372,6 +1459,9 @@
 								<a href="_handscrollviewer1_.handscrollviewer.html#frameautohorizontalscroll" class="tsd-kind-icon">frame<wbr>Auto<wbr>Horizontal<wbr>Scroll</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+								<a href="_handscrollviewer1_.handscrollviewer.html#getautoscrollspeedsetting" class="tsd-kind-icon">get<wbr>Auto<wbr>Scroll<wbr>Speed<wbr>Setting</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
 								<a href="_handscrollviewer1_.handscrollviewer.html#gotorightedge" class="tsd-kind-icon">goto<wbr>Right<wbr>Edge</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
@@ -1379,6 +1469,9 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
 								<a href="_handscrollviewer1_.handscrollviewer.html#hidecontrolstoggle" class="tsd-kind-icon">hide<wbr>Controls<wbr>Toggle</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+								<a href="_handscrollviewer1_.handscrollviewer.html#setautoscrollspeedsetting" class="tsd-kind-icon">set<wbr>Auto<wbr>Scroll<wbr>Speed<wbr>Setting</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
 								<a href="_handscrollviewer1_.handscrollviewer.html#showannotations" class="tsd-kind-icon">show<wbr>Annotations</a>
