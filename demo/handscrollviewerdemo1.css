@@ -1,0 +1,130 @@
+/* cascade styles sheet for HandscrollViewerDemo1.html demo website */
+
+body {
+    font-family:sans-serif;
+    background-color:white;
+}
+
+#external-toolbar {
+    height:30px;
+    padding-top:15px;
+    padding-left:30px;
+}
+
+div.external-prev-next-button {
+    cursor:default;
+    display:inline-block;
+    width:90px;
+    height:16px;
+    border-radius:5px;
+    text-align:center;
+    background-color:gray;
+    color:white;
+    padding:5px;
+}
+
+div.external-show-with-id-button {
+    cursor:default;
+    display:inline-block;
+    width:250px;
+    height:16px;
+    border-radius:5px;
+    text-align:center;
+    background-color:gray;
+    color:white;
+    padding:5px;
+}
+
+#handscrollviewer-1-div {
+    background-color:black;
+    height:600px;
+    margin-top:15px;
+    margin-bottom:30px
+}
+
+#readme-message {
+    text-align:center;
+    color:#800000;
+    margin-top:20px;
+}
+
+#handscroll-viewer-comparison-message {
+    text-align:center;
+    color:black;
+    margin-top:50px;
+}
+
+#handscrollviewer-2-div {
+   background-color:black;
+   height:475px;
+}
+
+#vertical-separator-div {
+    height:10px;
+    background-color:#800000;
+}
+
+#handscrollviewer-3-div {
+    background-color:black;
+    height:475px;
+    margin-bottom:30px;
+}
+
+#attibution-div {
+    width:100%;
+    margin-bottom:30px;
+    text-align:center;
+    font-size:10px;
+}
+
+#handscroll-user-interface-overview-div {
+    margin:auto;
+    width:500px;
+    border-radius:5px;
+    color:#ffffff;
+    background-color:lightgray;
+    padding-bottom:20px;
+}
+
+#user-interface-header-text {
+    margin: 10px 10px 10px 10px;
+    text-align:center;
+    padding-top:20px;"
+}
+
+#user-interface-container {
+    margin: 10px 10px 10px 10px;
+    text-align:left;
+}
+
+div.user-interface-toolbar-button {
+    cursor:default;
+    display:inline-block;
+    width:90px;
+    height:16px;
+    border-radius:5px;
+    text-align:center;
+    background-color:rgba(255,255,255,0.3);
+    color:#800000;
+    padding:5px;
+}
+
+div.user-interface-button-div {
+    display:inline-block;
+    position:relative;
+}
+
+img.user-interface-image {
+    vertical-align:middle;
+}
+
+span.user-interface-button-span {
+    display:inline-block;
+    vertical-align:middle;
+}
+
+#user-interface-final-text {
+    width:450px;
+    text-align:center;
+}
+

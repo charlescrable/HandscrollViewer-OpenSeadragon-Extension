@@ -1,0 +1,208 @@
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+            
+        <title>Handscroll Viewer Demo 1</title>
+ 
+ 
+        <!-- include openseadragon js library -->
+        <script src="./openseadragon-bin-2.2.1/openseadragon.js"></script>
+ 
+        <!-- include handscrollviewer1 js library AFTER openseadragon js library  -->
+        <script src="./handscrollviewer1.js"></script>
+        
+        <!-- include js array of DZI image objects for this website  -->
+        <script src="./HandscrollViewerDemo1DziImages.js"></script>
+
+        <!-- include js array of annotation objects for this website  -->
+        <script src="./HandscrollViewerDemo1Annotations.js"></script>
+        
+
+        <!-- link to the website's external style sheet -->
+        <link rel="stylesheet" href="./handscrollviewerdemo1.css">
+
+
+        <script>
+            var demoHandscrollViewer1;
+            var demoHandscrollViewer2;
+            var demoHandscrollViewer3;
+            
+            window.onload = function() {
+ 
+                // instantiate the three scroll viewers in the test website,
+                // last viewer instantiated get focus
+                demoHandscrollViewer2 = new HandscrollViewer("7137966", "handscrollviewer-2-div");
+                
+                demoHandscrollViewer3 = new HandscrollViewer("10000104", "handscrollviewer-3-div");
+                
+                demoHandscrollViewer1 = new HandscrollViewer("728363", "handscrollviewer-1-div");
+ 
+                // set auto scroll speed to fastest (1.0 slowest, 10.0 fastest, default 2.0) for top viewer
+                demoHandscrollViewer1.setAutoScrollSpeedSetting(10.0);
+                
+
+                //  disable select dragstart and contextmenu default behavior
+                document.body.onselectstart = function (e) {
+                    return false;
+                };
+                document.body.oncontextmenu = function (e) {
+                    e.preventDefault();
+                };
+                document.body.ondragstart = function (e) {
+                    e.preventDefault();
+                };
+            }
+        </script>
+    </head>
+    
+    <body>
+
+        <!-- toolbar button div before first handscroll viewer div -->
+        <div id="external-toolbar">
+           
+            <!-- prev scroll button div, click calls displayPrevScroll API method -->
+            <div class="external-prev-next-button" onmouseup="demoHandscrollViewer1.displayPrevScroll()">
+                prev scroll
+            </div>
+            <!-- end of prev scroll button -->
+            
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            
+            <!-- next scroll button div, click calls displayNextScroll API method -->
+            <div class="external-prev-next-button" onmouseup="demoHandscrollViewer1.displayNextScroll()">
+                next scroll
+            </div>
+            <!-- end of next scroll button -->
+            
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            
+            <!-- show scroll with id: 7137966 button div, click calls displa API method displayScrollWithId -->
+            <div class="external-show-with-id-button" onmouseup="demoHandscrollViewer1.displayScrollWithId('7137966')">
+                show scroll with id: 7137966
+            </div>
+            <!-- end of show scroll with id: 7137966 button div -->
+            
+        </div>
+        <!-- end of toolbar button div -->
+
+
+        <!-- handscrollviewer-1-div scroll viewer div -->
+        <div id="handscrollviewer-1-div">
+        </div>
+        
+        
+        <!-- start of handscroll user interface overview div -->
+        <div id="handscroll-user-interface-overview-div">
+            
+            <div id="user-interface-header-text">
+                Handscroll Viewer User Interface Overview
+            </div>
+            
+            <div id="user-interface-container">
+                </br>
+                <div class="user-interface-toolbar-button">next scroll</div>&nbsp;&nbsp;&nbsp;&nbsp;display next scroll
+                </br>
+                </br>
+                <div class="user-interface-toolbar-button">prev scroll</div>&nbsp;&nbsp;&nbsp;&nbsp;display previous scroll
+                </br>
+                </br>
+                <div class="user-interface-button-div">
+                    <img class="user-interface-image" src="./openseadragon-bin-2.2.1/images/zoomin_hover.png" />
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="user-interface-button-span">zoom in</span>
+                    &nbsp;&nbsp;<span class="user-interface-button-span">= or + or mouse wheel</span>
+                </div>
+                </br>
+                <div class="user-interface-button-div">
+                    <img class="user-interface-image" src="./openseadragon-bin-2.2.1/images/zoomout_hover.png" />
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="user-interface-button-span">zoom out</span>
+                    &nbsp;&nbsp;<span class="user-interface-button-span">- or _ or mouse wheel</span>
+                </div>
+                </br>
+                <div class="user-interface-button-div">
+                    <img class="user-interface-image" src="./openseadragon-bin-2.2.1/images/home_hover.png" />
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="user-interface-button-span">home to inital image view</span>
+                    &nbsp;&nbsp;<span class="user-interface-button-span">0</span>
+                </div>
+                </br>
+                <div class="user-interface-button-div">
+                    <img class="user-interface-image" src="./openseadragon-bin-2.2.1/images/fullpage_hover.png" />
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="user-interface-button-span">toggle full screen view</span>
+                </div>
+                </br>
+                <div class="user-interface-button-div">
+                    <img class="user-interface-image" src="./buttonImages/annotationhide_hover.png" />
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="user-interface-button-span">hide annotations</span>
+                </div>
+                </br>
+                <div class="user-interface-button-div">
+                    <img class="user-interface-image" src="./buttonImages/annotationshow_hover.png" />
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="user-interface-button-span">show annotations</span>
+                </div>
+                </br>
+                <div class="user-interface-button-div">
+                    <img class="user-interface-image" src="./buttonImages/playright_hover.png" />
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="user-interface-button-span">auto scroll right</span>
+                </div>
+                </br>
+                <div class="user-interface-button-div">
+                    <img class="user-interface-image" src="./buttonImages/playleft_hover.png" />
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="user-interface-button-span">auto scroll left</span>
+                </div>
+                </br>
+                <div class="user-interface-button-div">
+                    <img class="user-interface-image" src="./buttonImages/ctrlhide_hover.png" />
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="user-interface-button-span">hide controls</span>
+                </div>
+                </br>
+                <div class="user-interface-button-div">
+                    <img class="user-interface-image" src="./buttonImages/ctrlshow_hover.png" />
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="user-interface-button-span">show controls</span>
+                </div>
+                </br>
+                </br>
+                <div id="user-interface-final-text">
+                    <span>move cursor off image window to fade out controls</span>
+                </div>
+                </br>
+            </div>
+        </div>
+        <!-- end of handscroll user interface overview div -->
+ 
+ 
+        <!-- README.md message div -->
+        <div id="readme-message">
+            <h4>See the README.md file for information about the implementation of this website</h4>
+        </div>
+ 
+ 
+        <!-- handscroll viewer comparison message div -->
+        <div id="handscroll-viewer-comparison-message">
+            <h3>Two Independent Handscroll Viewers Vertically Aligned for COMPARISON</h3>
+        </div>
+
+
+        <!-- handscrollviewer-2-div scroll viewer div -->
+        <div id="handscrollviewer-2-div">
+        </div>
+
+        <!-- vertical separator div -->
+        <div id="vertical-separator-div">
+        </div>
+
+        <!-- handscrollviewer-3-div scroll viewer div -->
+        <div id="handscrollviewer-3-div">
+        </div>
+
+
+        <!-- image attribution div -->
+        <div id="attibution-div">
+            <span>Views of Huqiu 虎丘圖卷, Original photos, Museum of Fine Arts - Boston 波士顿美术馆, accession number: 57.5, scroll id: 728363</span></br>
+            <span>Illustrated Scroll of the Nocturnal Procession of One Hundred Goblins 百鬼夜行絵巻, Published image, Komatsu, Shigemi. Nihon emaki taisei, v. 25: Nōe Hōshi ekotoba, Fukutomi sōshi, Hyakki yakō emaki. Tokyo: Chūō Kōronsha, 1977-1979, scroll id: 7137966</span></br>
+            <span>Fukutomi Zoshi (Cleveland Museum Version) 福富草紙 (クリーブランド美術館本), Original photos, Cleveland Museum of Art 克利夫兰美术馆, accession number: 1953.358, scroll id: 10000104</span></br>
+            <span>Landscape (after Huang Gongwang) 臨大痴山水, Original photos, Smart Museum of Art - Chicago, accession number: 1987.56, scroll id: 728345</span></br>
+
+        </div
+
+    </body>
+</html>
