@@ -25,6 +25,5 @@ A simple demonstration website referenced in the following documentation is loca
 
 * Standard OpenSeadragon functionality (zoom in and out, image drag, etc.) are fully available
 
-* Test
 
 
