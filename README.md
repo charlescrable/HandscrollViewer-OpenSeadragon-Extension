@@ -31,7 +31,27 @@ A __simple demonstration website__ referenced in the following documentation is 
 A __simple demonstration website__ referenced in the following documentation is located at `demo/HandscrollViewerDemo1.html` in this project. Clone or download the project to your local computer.  Open `HandscrollViewerDemo1.html` in your browser. 
 
 ![top of demo site image](./readme-images/top-of-demo-site-image.png)
-           <sup>screenshot of a scroll view at the top of the demo site page<sup>
+<sup>screenshot of a scroll view at the top of the demo site page<sup>
+
+Control buttons and navigation control are in the upper left corner of the view window. When the mouse moves off the view, the controls fade out of view.
+
+__Custom controls__ added by the HandscrollViewer code include the following buttons:
+
+![hide controls button](./readme-images/hide-controls-button-image.png)
+
+![home button](./readme-images/home-button-image.png)
+
+![hide annontations button](./readme-images/hide-annotations-button-image.png) ![show annotations button](./readme-images/show-annotations-button-image.png)
+
+![auto right left button](./readme-images/auto-scroll-right-button-image.png)
+
+![auto scroll left button](./readme-images/auto-scroll-left-button-image.png)
+
+
+
+
+
+
 
 
 
