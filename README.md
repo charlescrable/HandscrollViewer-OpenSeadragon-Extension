@@ -26,8 +26,14 @@ A __simple demonstration website__ referenced in the following documentation is 
 * Standard OpenSeadragon functionality (zoom in and out, image drag, etc.) are fully available
 
 
+### Demo website
+
+A __simple demonstration website__ referenced in the following documentation is located at `demo/HandscrollViewerDemo1.html` in this project. Clone or download the project to your local computer.  Open `HandscrollViewerDemo1.html` in your browser. 
 
 ![top of demo site image](./readme-images/top-of-demo-site-image.png)
+
+
+
 
 
 
