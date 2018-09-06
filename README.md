@@ -27,3 +27,7 @@ A simple demonstration website referenced in the following documentation is loca
 
 
 
+![top of demo site image](./readme-images/top-of-demo-site-image.png)
+
+
+
