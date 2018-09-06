@@ -31,6 +31,7 @@ A __simple demonstration website__ referenced in the following documentation is 
 A __simple demonstration website__ referenced in the following documentation is located at `demo/HandscrollViewerDemo1.html` in this project. Clone or download the project to your local computer.  Open `HandscrollViewerDemo1.html` in your browser. 
 
 ![top of demo site image](./readme-images/top-of-demo-site-image.png)
+<small>screenshot of a scroll view at the top of the demo site page<small>
 
 
 
