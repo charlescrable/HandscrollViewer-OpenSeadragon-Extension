@@ -17,13 +17,13 @@ A __simple demonstration website__ referenced in the following documentation is 
 
 * Optional annotations can be added and controlled for specific images
 
-* Initial display and Home start at right edge of the image (per handscroll tradition)
+* Initial display and Home start at the right edge of the image (per handscroll tradition)
 
 * Horizontal auto scroll with custom scroll speed control
 
-* Annotations fully supported including annotation creation aides
+* Annotation creation aides are included
 
-* Image and annotation information specified in separate metadata for ease of updating
+* Image and annotation information are specified in separate metadata for ease of updating
 
 * Standard OpenSeadragon functionality (zoom in and out, image drag, etc.) are fully available
 
@@ -90,7 +90,7 @@ The `openseadragon-bin-2.2.1` directory contains OpenSeadragon javascript code a
 
 The `DZIImages` directory contains the DZI image folders of the scroll images available to the current website.
 
-The `buttonImages` directory contains the custom button images needed by HandscrollViewer.  __Note: the location of the custom button images can be specified in the HandscrollViewer public property `prefixScrollUrl`.__
+The `buttonImages` directory contains the custom button images needed by HandscrollViewer.  __Note: the location of the custom button images is specified in the HandscrollViewer public property `prefixScrollUrl`.__
 
 
 
