@@ -196,7 +196,7 @@ The __scroll image id__ identifies a DZI image metadata object in the `siteDziIm
 The __viewer DIV id__ indentifies the viewer DIV area in the current page where the viewer should be located.
 
 
-Note: the `setAutoScrollSpeedSetting(10.0)` method called in the demonstration website resets the auto scroll speed.  The auto scroll speed can be set to any number value between 1 and 10.  1 is the slowest and 10 is the fastest.  The default speed in 2.
+Note: the `setAutoScrollSpeedSetting(10.0)` method called in the demonstration website resets the auto scroll speed.  The auto scroll speed can be set to any number value between 1 and 10.  1 is the slowest and 10 is the fastest.  The default speed is 2.
 
 Note: the last HandscrollViewer instantiated receives focus.
 
@@ -204,7 +204,7 @@ Note: the last HandscrollViewer instantiated receives focus.
 
 ### DZI Images Metadata Objects Array `siteDziImages`
 
-The HanscrollViewer class requires that an array of DZI image metadata object literals exist referenced by a variable named `siteDziImages`.  Eash DZI image metadata object literal defines necessary information about each scroll image that can be displayed in the current website.
+The HanscrollViewer class requires that an array of DZI image metadata object literals exist referenced by a variable named `siteDziImages`.  Each DZI image metadata object literal defines the necessary information about each scroll image that can be displayed in the current website.
 
 In the demonstration website the `siteDziImages` array is defined in the HandscrollViewerDemo1DziImages.js file.  The beginning of the array is shown below:
 
@@ -234,17 +234,54 @@ Width: "63978",
 
 Each DZI image object contains four properties as describe below:
 
-* `Id` a unique string the identifies the DZI image of a scroll
+* `Id` a unique string the identifies the DZI image of a scroll.  Used by HandscrollViewer to specify a unique scroll image to display.
 
-* `Url` a url string the specifies the location of the scroll's DZI image directory
+* `Url` a url string the specifies the location of the scroll's DZI image directory. The url can be a relative or or absolute address. 
 
-* `Height` the height in number of pixels of the scroll image
+* `Height` the height in number of pixels of the scroll image. Must be correct for the image to be displayed properly.
 
-* `Width` the width in number of pixels of the scroll image
+* `Width` the width in number of pixels of the scroll image. Must be correct for the image to be displayed properly.
 
 
 
 ### Annotations Metadata Objets Array `siteAnnotations`
+
+The HanscrollViewer class requires that an array of annotation metadata object literals exist referenced by a variable named `siteAnnotation`. Each annotation metadata object literal defines the necessary information to display an annotation for given. Each scroll image, identified by a scroll image id, that has annotations will have an array of annotation objects. 
+
+The scroll image id in the `siteAnnotations` array should match the scroll image id in the `siteDziImages` array.
+
+If a scroll image does not have any annotations an entry the `siteAnnotations` array DOES NOT have to exits.  If none of the scroll images in the website have annotations, then `siteAnnotations` can refer to an emply array.
+
+In the demonstration website the `siteAnnotations` array is defined in the HandscrollViewerDemo1Annotations.js file.  The beginning of the array is shown below:
+
+```
+var siteAnnotations =   [
+{
+// Landscape (after Huang Gongwang) 臨大痴山水 annotations
+
+Id: "728345",               // scroll id string
+imageAnnotations:           // imageAnnotations array of annotation objects
+[
+{
+x: 0.939098,            // x and y OpenSeadragon viewport coordinates
+y: 0.004251,            // of the upper right corner of annotation display
+title: "Frontpiece",
+text: "At the beginning of the handscroll, a title sheet prefaces the painting. The large characters 'hen gu 恨古' can be translated as 'longing for the past.' The first seal that appears on the far right of the scroll is 'ji tang 霽堂.'"
+},
+{
+x: 0.919804,
+y: 0.025577,
+title: "Calligrapher Signature",
+text: "The smaller characters at the end of the title sheet are the signature of the calligrapher Zhou Eryan 周而衍. The signature is written in a very cursive style, but the name can be deciphered through the calligraphers seal on the right. The bottom seal reads donghui 東會."
+},
+
+.
+.
+.
+
+```
+
+Each 
 
 
 
