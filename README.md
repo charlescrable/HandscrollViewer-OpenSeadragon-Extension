@@ -152,11 +152,10 @@ The two comparison viewer DIVs at the bottom of the demonstration page is shown 
 
 
 
-### `siteDziImages` DZI Images Metadata Objects Array
+### DZI Images Metadata Objects Array `siteDziImages`
 
 
-
-### `siteAnnotations` Annotations Metadata Objets Array
+### Annotations Metadata Objets Array `siteAnnotations`
 
 
 
