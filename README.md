@@ -281,7 +281,21 @@ text: "The smaller characters at the end of the title sheet are the signature of
 
 ```
 
-Each 
+Each scroll image above with annotations has an `Id` property followed by an array named `imageAnnotations` of annotation object literals.
+
+An annotation object defines a single annotation located on a scroll image.  Each annotation object contains for properties as described below:
+
+* `x` x coordinate in OpenSeadragon viewport coordinates of the upper right hand corner of the annotation.
+
+* `y` x coordinate in OpenSeadragon viewport coordinates of the upper right hand corner of the annotation.
+
+* `title` title text of the annotation.
+
+* `text` body text of the annotation.
+
+
+
+### Annotation Creation Aide
 
 
 
