@@ -21,6 +21,8 @@ A __simple demonstration website__ referenced in the following documentation is 
 
 * Horizontal auto scroll with custom scroll speed control
 
+* Annotations fully supported including annotation creation aides
+
 * Image and annotation information specified in separate metadata for ease of updating
 
 * Standard OpenSeadragon functionality (zoom in and out, image drag, etc.) are fully available
@@ -48,9 +50,33 @@ __Custom Control Buttons__ added in addition to standard OpenSeadragon buttons i
 
 ![auto scroll left button](./readme-images/auto-scroll-left-button-image.png) Auto scroll the scroll image view to the left.
 
-Note: auto scrolling is useful in a teaching or presentation situation.
+Note: auto scrolling is useful in teaching or presentation situations.
 
-the __Custom Navigation Control Image__ operates as in a standard OpenSeadragon viewer. The height of the navigation control image is fix at a readable height, and the width varies based on the aspect ratio of the scroll image. This eliminates the problem of the navigation control image being so thin it is unusable.
+The __Custom Navigation Control Image__ operates as in a standard OpenSeadragon viewer. What differs here is the height of the navigation control image is fix at a readable height, and the width varies based on the aspect ratio of the scroll image. This eliminates the problem of the navigation control image being so thin it is unusable.
+
+Annotations are implemented as a title area that when clicked toggles display the full text of the annotation.
+
+
+# HTML Implementation of HandscrollViewer Windows
+
+Refer to the files in the `demo/`directory of this project. 
+
+The following files should be viewed in a text or program editor:
+
+```
+HandscrollViewerDemo1.html
+
+HandscrollViewerDemo1Annotations.js
+
+HandscrollViewerDemo1DziImages.js
+```
+
+The 
+
+
+
+
+
 
 
 
