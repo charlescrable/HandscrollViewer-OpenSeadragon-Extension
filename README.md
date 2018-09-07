@@ -66,12 +66,30 @@ The following files should be viewed in a text or program editor:
 ```
 HandscrollViewerDemo1.html
 
-HandscrollViewerDemo1Annotations.js
-
 HandscrollViewerDemo1DziImages.js
+
+HandscrollViewerDemo1Annotations.js
 ```
 
-The 
+`HandscrollViewerDemo1.html` is the HTML file demonstration web page which contains three HandscrollViewer Windows.
+`HandscrollViewerDemo1DziImages.js` defines the array of image metadata objects which define the scroll images available to the current website. 
+`HandscrollViewerDemo1Annotations.js` defines the array of annotation metadata objects which define the annotations available to the images in the current website.
+
+
+The website implementation also depends on the following directories:
+
+```
+buttonImages
+
+DZIImages
+
+openseadragon-bin-2.2.1
+```
+
+
+
+
+
 
 
 
