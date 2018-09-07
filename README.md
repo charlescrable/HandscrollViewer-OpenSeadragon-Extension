@@ -95,9 +95,60 @@ The `buttonImages` directory contains the custom button images needed by Handscr
 
 ### Including Files and Folders Needed by HandscrollViewer
 
+Below is example code from the demonstration website that javascript and data files for HandscrollViewer:
+
+```
+
+<!-- include openseadragon js library -->
+<script src="./openseadragon-bin-2.2.1/openseadragon.js"></script>
+
+<!-- include handscrollviewer1 js library AFTER openseadragon js library  -->
+<script src="./handscrollviewer1.js"></script>
+
+<!-- include js array of DZI image objects for this website  -->
+<script src="./HandscrollViewerDemo1DziImages.js"></script>
+
+<!-- include js array of annotation objects for this website  -->
+<script src="./HandscrollViewerDemo1Annotations.js"></script>
+
+
+
+```
 
 
 ### Defining DIV areas for HandscrollViewer Windows
+
+Three DIV areas for HandscrollViewer windows are defined in the demonstration website page. Each viewer DIV has a unique `id`.
+
+The single viewer DIV at the top of the page is shown below:
+
+```
+
+<!-- handscrollviewer-1-div scroll viewer div -->
+<div id="handscrollviewer-1-div">
+</div>
+
+
+```
+
+The two comparison viewer DIVs at the bottom of the demonstration page is shown below:
+
+```
+
+<!-- handscrollviewer-2-div scroll viewer div -->
+<div id="handscrollviewer-2-div">
+</div>
+
+<!-- vertical separator div -->
+<div id="vertical-separator-div">
+</div>
+
+<!-- handscrollviewer-3-div scroll viewer div -->
+<div id="handscrollviewer-3-div">
+</div>
+
+
+```
 
 
 
