@@ -28,6 +28,7 @@ A __simple demonstration website__ referenced in the following documentation is 
 * Standard OpenSeadragon functionality (zoom in and out, image drag, full screen mode, etc.) are fully available
 
 
+
 ### Demo website
 
 A __simple demonstration website__ referenced in the following documentation is located at `demo/HandscrollViewerDemo1.html` in this project's folder'. Clone or download the project to your local computer.  Open `HandscrollViewerDemo1.html` in your browser. 
@@ -55,6 +56,8 @@ Note: auto scrolling is useful in teaching or presentation situations.
 The __Custom Navigation Control Image__ operates as in a standard OpenSeadragon viewer. What differs here is the height of the navigation control image is fix at a readable height, and the width varies based on the aspect ratio of the scroll image. This eliminates the problem of the navigation control image being so thin it is unusable.
 
 Annotations are implemented as a title area that when clicked toggles display the full text of the annotation.
+
+
 
 
 # HTML Implementation of HandscrollViewer Windows
@@ -88,14 +91,15 @@ buttonImages
 
 The `openseadragon-bin-2.2.1` directory contains OpenSeadragon javascript code and data needed by HandscrollViewer.  __Note: this version of OpenSeadragon is the only version tested with HandscrollViewer.__
 
-The `DZIImages` directory contains the DZI image folders of the scroll images available to the current website.
+The `DZIImages` directory contains the DZI image folders of the scroll images available in the demonstation website.
 
 The `buttonImages` directory contains the custom button images needed by HandscrollViewer.  __Note: the location of the custom button images is specified in the HandscrollViewer public property `prefixScrollUrl`.__
 
 
+
 ### Including Files and Folders Needed by HandscrollViewer
 
-Below is example code from the demonstration website that javascript and data files for HandscrollViewer:
+Below is the HTML code from the demonstration website that includes the javascript and data files for HandscrollViewer:
 
 ```
 
@@ -114,6 +118,7 @@ Below is example code from the demonstration website that javascript and data fi
 ```
 
 
+
 ### Defining DIV areas for HandscrollViewer Windows
 
 Three DIV areas for HandscrollViewer windows are defined in the demonstration website page. Each viewer DIV has a unique `id`.
@@ -128,7 +133,7 @@ The single viewer DIV at the top of the page is shown below:
 
 ```
 
-The two comparison viewer DIVs at the bottom of the demonstration page is shown below:
+The two comparison viewer DIVs at the bottom of the demonstration page are shown below:
 
 ```
 
@@ -186,13 +191,15 @@ On the `window.onload` event the three HandscrollViewer windows are created usin
 
 The constructor method takes two parameters: the __scroll image id__ string and the __viewer DIV id__ string.
 
-The __scroll image id__ identifies a DZI image metadata object in `siteDziImages` array defined in the included HandscrollViewerDemo1DziImages.js file. 
+The __scroll image id__ identifies a DZI image metadata object in the `siteDziImages` array defined in the included HandscrollViewerDemo1DziImages.js file. 
 
 The __viewer DIV id__ indentifies the viewer DIV area in the current page where the viewer should be located.
 
+
 Note: the `setAutoScrollSpeedSetting(10.0)` method called in the demonstration website resets the auto scroll speed.  The auto scroll speed can be set to any number value between 1 and 10.  1 is the slowest and 10 is the fastest.  The default speed in 2.
 
-Note: the last HandscrollViewer instantiated receives focus in the webpage.
+Note: the last HandscrollViewer instantiated receives focus.
+
 
 
 ### DZI Images Metadata Objects Array `siteDziImages`
@@ -234,6 +241,7 @@ Each DZI image object contains four properties as describe below:
 * `Height` the height in number of pixels of the scroll image
 
 * `Width` the width in number of pixels of the scroll image
+
 
 
 ### Annotations Metadata Objets Array `siteAnnotations`
