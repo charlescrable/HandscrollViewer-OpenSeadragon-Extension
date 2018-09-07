@@ -281,15 +281,15 @@ text: "The smaller characters at the end of the title sheet are the signature of
 
 ```
 
-Each scroll image above with annotations has an `Id` property followed by an array named `imageAnnotations` of annotation object literals.
+Each scroll image with annotations has an `Id` property followed by an array named `imageAnnotations` of annotation object literals.
 
-An annotation object defines a single annotation located on a scroll image.  Each annotation object contains for properties as described below:
+An annotation object defines a single annotation located on a scroll image.  Each annotation object contains four properties as described below:
 
 * `x` x coordinate in OpenSeadragon viewport coordinates of the upper right hand corner of the annotation.
 
-* `y` x coordinate in OpenSeadragon viewport coordinates of the upper right hand corner of the annotation.
+* `y` y coordinate in OpenSeadragon viewport coordinates of the upper right hand corner of the annotation.
 
-* `title` title text of the annotation.
+* `title` title of the annotation.
 
 * `text` body text of the annotation.
 
@@ -297,9 +297,16 @@ An annotation object defines a single annotation located on a scroll image.  Eac
 
 ### Annotation Creation Aide
 
+__Simultaneously pressing the `alt` key and the `control` key, then clicking on a scroll image__ in a Handscroll viewer window will the display the OpenSeadragon viewport coordinates of the location clicked an an alert dialog.  Also a temporary test annotation will be created to verify if the annotation location is acceptable.
+
+When creating an annotation for a scroll, identifying the annotation location in OpenSeadragon viewport coordinates is not readily discernable.
+
+The HandscrollViewer implementation provides this convenient method for obtaining the OpenSeadragon viewport coordiates of a specific point on a scroll image.
+
 
 
 ### DZI Image Notes
+
 
 
 
