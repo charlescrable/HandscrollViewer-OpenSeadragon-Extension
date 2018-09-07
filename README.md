@@ -79,12 +79,24 @@ HandscrollViewerDemo1Annotations.js
 The website implementation also depends on the following directories:
 
 ```
-buttonImages
+openseadragon-bin-2.2.1
 
 DZIImages
 
-openseadragon-bin-2.2.1
+buttonImages
 ```
+
+The `openseadragon-bin-2.2.1` directory contains OpenSeadragon javascript code and data needed by HandscrollViewer.  __Note: this version of OpenSeadragon is the only version tested with HandscrollViewer.__
+
+The `DZIImages` directory contains the DZI image folders of the scroll images available to the current website.
+
+The `buttonImages` directory contains the custom button images needed by HandscrollViewer.  __Note: the location of the custom button images can be specified in the HandscrollViewer public property `prefixScrollUrl`.__
+
+
+
+
+
+
 
 
 
