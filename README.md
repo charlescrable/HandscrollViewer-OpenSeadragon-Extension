@@ -188,12 +188,52 @@ The constructor method takes two parameters: the __scroll image id__ string and 
 
 The __scroll image id__ identifies a DZI image metadata object in `siteDziImages` array defined in the included HandscrollViewerDemo1DziImages.js file. 
 
-The __viewer DIV id__ indentifies the view DIV area in the current page where the viewer should be located.
+The __viewer DIV id__ indentifies the viewer DIV area in the current page where the viewer should be located.
+
+Note: the `setAutoScrollSpeedSetting(10.0)` method called in the demonstration website resets the auto scroll speed.  The auto scroll speed can be set to any number value between 1 and 10.  1 is the slowest and 10 is the fastest.  The default speed in 2.
+
+Note: the last HandscrollViewer instantiated receives focus in the webpage.
 
 
 ### DZI Images Metadata Objects Array `siteDziImages`
 
+The HanscrollViewer class requires that an array of DZI image metadata object literals exist referenced by a variable named `siteDziImages`.  Eash DZI image metadata object literal defines necessary information about each scroll image that can be displayed in the current website.
 
+In the demonstration website the `siteDziImages` array is defined in the HandscrollViewerDemo1DziImages.js file.  The beginning of the array is shown below:
+
+```
+var siteDziImages =    [
+//  siteDziImages array of DZI image objects for HandscrollViewerTest1.html site
+{
+// Views of Huqiu 虎丘圖卷
+Id: "728363",                       // scroll id string
+Url: "./DZIImages/728363_files/",   // scroll DZI image folder url
+Height: "2724",                     // scroll height in pixels
+Width: "37098",                     // scroll width in pixels
+},
+{
+// Illustrated Scroll of the Nocturnal Procession of One Hundred Goblins 百鬼夜行絵巻
+Id: "7137966",
+Url: "./DZIImages/7137966_files/",
+Height: "2816",
+Width: "63978",
+},
+
+.
+.
+.
+
+```
+
+Each DZI image object contains four properties as describe below:
+
+* `Id` a unique string the identifies the DZI image of a scroll
+
+* `Url` a url string the specifies the location of the scroll's DZI image directory
+
+* `Height` the height in number of pixels of the scroll image
+
+* `Width` the width in number of pixels of the scroll image
 
 
 ### Annotations Metadata Objets Array `siteAnnotations`
