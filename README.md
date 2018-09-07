@@ -25,7 +25,7 @@ A __simple demonstration website__ referenced in the following documentation is 
 
 * Image and annotation information are specified in separate metadata for ease of updating
 
-* Standard OpenSeadragon functionality (zoom in and out, image drag, etc.) are fully available
+* Standard OpenSeadragon functionality (zoom in and out, image drag, full screen mode, etc.) are fully available
 
 
 ### Demo website
@@ -91,6 +91,30 @@ The `openseadragon-bin-2.2.1` directory contains OpenSeadragon javascript code a
 The `DZIImages` directory contains the DZI image folders of the scroll images available to the current website.
 
 The `buttonImages` directory contains the custom button images needed by HandscrollViewer.  __Note: the location of the custom button images is specified in the HandscrollViewer public property `prefixScrollUrl`.__
+
+
+### Including Files and Folders Needed by HandscrollViewer
+
+
+
+### Defining DIV areas for HandscrollViewer Windows
+
+
+
+### Instantiating the HandscrollViewer Windows
+
+
+
+### `siteDziImages` DZI Images Metadata Objects Array
+
+
+
+### `siteAnnotations` Annotations Metadata Objets Array
+
+
+
+### DZI Image Notes
+
 
 
 
