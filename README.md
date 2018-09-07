@@ -57,6 +57,7 @@ The __Custom Navigation Control Image__ operates as in a standard OpenSeadragon 
 
 Annotations are implemented as a title area that when clicked toggles display the full text of the annotation.
 
+The __prev Scroll__, __next Scroll__ and __show scroll with id:7137966__ buttons at the top of the page are external to the HandscrollViewer window.  The __prev scroll__ and __next scroll__ buttons opens the previous or next scroll image in the current list of scroll image objects.  The __show scroll with id:7137966__ opens the scroll with id 7137966 in the current list of scroll image objects. (See the __DZI Images Metadata Objects Array `siteDziImages`__ section below).  
 
 Below is a screenshot of the bottom of the demonstration website page showing two independent HandscrollViewer windows stacked vertically for comparison purposes:
 
