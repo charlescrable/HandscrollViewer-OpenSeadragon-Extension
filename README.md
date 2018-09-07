@@ -58,8 +58,9 @@ The __Custom Navigation Control Image__ operates as in a standard OpenSeadragon 
 Annotations are implemented as a title area that when clicked toggles display the full text of the annotation.
 
 
+Below is a screenshot of the bottom of the demonstration website page showing two independent HandscrollViewer windows stacked vertically for comparison purposes:
+
 ![bottom of demo site comparison image](./readme-images/bottom-of-demo-site-comparison-image.png)
-<sup><sup>Screenshot of a two comparison scroll views at the bottom of the demo site page<sup><sup>
 
 
 
