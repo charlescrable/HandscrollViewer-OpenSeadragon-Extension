@@ -21,7 +21,7 @@ A __simple demonstration website__ referenced in the following documentation is 
 
 * Horizontal auto scroll with custom scroll speed control
 
-* Annotation creation aides are included
+* Annotation creation aide is included
 
 * Image and annotation information are specified in separate metadata for ease of updating
 
@@ -57,6 +57,9 @@ The __Custom Navigation Control Image__ operates as in a standard OpenSeadragon 
 
 Annotations are implemented as a title area that when clicked toggles display the full text of the annotation.
 
+
+![bottom of demo site comparison image](./readme-images/bottom-of-demo-site-comparison-image.png)
+<sup><sup>Screenshot of a two comparison scroll views at the bottom of the demo site page<sup><sup>
 
 
 
