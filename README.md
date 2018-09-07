@@ -150,9 +150,50 @@ The two comparison viewer DIVs at the bottom of the demonstration page is shown 
 
 ### Instantiating the HandscrollViewer Windows
 
+The three HandscrollViewer windows in the demonstration page are instantiated as shown below:
+
+
+```
+
+<script>
+var demoHandscrollViewer1;
+var demoHandscrollViewer2;
+var demoHandscrollViewer3;
+
+window.onload = function() {
+
+// instantiate the three scroll viewers in the test website,
+// last viewer instantiated gets focus
+
+demoHandscrollViewer2 = new HandscrollViewer("7137966", "handscrollviewer-2-div");
+
+demoHandscrollViewer3 = new HandscrollViewer("10000104", "handscrollviewer-3-div");
+
+demoHandscrollViewer1 = new HandscrollViewer("728363", "handscrollviewer-1-div");
+
+// set auto scroll speed to fastest (1.0 slowest, 10.0 fastest, default 2.0) for top viewer
+demoHandscrollViewer1.setAutoScrollSpeedSetting(10.0);
+
+.
+.
+.
+
+```
+
+Three variables are created to reference the three HandsrollViewer objects that will be created.
+
+On the `window.onload` event the three HandscrollViewer windows are created using the HandscrollViewer class constuctor method.
+
+The constructor method takes two parameters: the __scroll image id__ string and the __viewer DIV id__ string.
+
+The __scroll image id__ identifies a DZI image metadata object in `siteDziImages` array defined in the included HandscrollViewerDemo1DziImages.js file. 
+
+The __viewer DIV id__ indentifies the view DIV area in the current page where the viewer should be located.
 
 
 ### DZI Images Metadata Objects Array `siteDziImages`
+
+
 
 
 ### Annotations Metadata Objets Array `siteAnnotations`
