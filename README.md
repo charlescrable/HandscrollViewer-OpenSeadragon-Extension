@@ -111,8 +111,6 @@ Below is example code from the demonstration website that javascript and data fi
 <!-- include js array of annotation objects for this website  -->
 <script src="./HandscrollViewerDemo1Annotations.js"></script>
 
-
-
 ```
 
 
@@ -127,7 +125,6 @@ The single viewer DIV at the top of the page is shown below:
 <!-- handscrollviewer-1-div scroll viewer div -->
 <div id="handscrollviewer-1-div">
 </div>
-
 
 ```
 
@@ -146,7 +143,6 @@ The two comparison viewer DIVs at the bottom of the demonstration page is shown 
 <!-- handscrollviewer-3-div scroll viewer div -->
 <div id="handscrollviewer-3-div">
 </div>
-
 
 ```
 
