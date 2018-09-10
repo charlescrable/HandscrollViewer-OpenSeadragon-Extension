@@ -334,9 +334,9 @@ The .jpeg files in sub-folder ’12’ are listed below:
 
 # TypeScript Source Code
 
-The __TypeScript source code__ for the HandscrollViewer class is located at `src/handscrollviewer1.tx` in this project's folder.
+The __TypeScript source code__ for the HandscrollViewer class is located at `src/handscrollviewer1.ts` in this project's folder.
 
-[TypeScript}(https://www.typescriptlang.org/) is a typed superset of JavaScript that compile to plain JavaScript.
+[TypeScript](https://www.typescriptlang.org/) is a typed superset of JavaScript that compiles to plain JavaScript.
 
 Project development uses Microsoft Visual Studio Code (https://code.visualstudio.com/) editor which includes language support for Typescript. The actual TypeScript compiler must be installed separately (<https://code.visualstudio.com/docs/languages/typescript>).
 
