@@ -314,11 +314,27 @@ The HandscrollViewer implementation provides this convenient method for obtainin
 
 The OpenSeadragon (and HandscrollViewer) enable effective interactive viewing of high-resolution 'zoomable' images encoded in the [DZI (Deep Zoom Image) format](https://en.wikipedia.org/wiki/Deep_Zoom).
 
+Normally handscroll images are stored in large high-resolution TIFF format files.
+
+The [VIPS image conversion program](https://jcupitt.github.io/libvips/) can be used to convert the TIFF scroll images to DZI format. Below is an example of a VIPS command in a Mac terminal window that converts a TIFF image to a DZI image:
+
+`$ vips dzsave hugescroll.tif my_dzi_folder`
+
+The DZI encoding of a high-resolution image is a folder that contains level of detail sub-folders with JPEG sub-images.
+
+Below is an example of the contents of a DZI folder named ‘7184665_files’. The DZI folder contains sub-folders with integer number names starting with ‘0’:
+
+![DZI folder with sub-folders](./readme-images/dzi-folder.png)
 
 
+The .jpeg files in sub-folder ’12’ are listed below:
+
+![DZI sub-folder with images](./readme-images/dzi-sub-folder.png)
 
 
 # Typescript Source Code
+
+
 
 
 
