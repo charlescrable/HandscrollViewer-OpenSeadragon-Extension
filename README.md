@@ -312,10 +312,13 @@ The HandscrollViewer implementation provides this convenient method for obtainin
 
 ### DZI Image Notes
 
+The OpenSeadragon (and HandscrollViewer) enable effective interactive viewing of high-resolution 'zoomable' images encoded in the [DZI (Deep Zoom Image) format](https://en.wikipedia.org/wiki/Deep_Zoom).
 
 
 
-# Project Typescript Source Code
+
+
+# Typescript Source Code
 
 
 
