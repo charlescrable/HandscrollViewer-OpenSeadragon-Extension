@@ -338,9 +338,9 @@ The __TypeScript source code__ for the HandscrollViewer class is located at `src
 
 [TypeScript](https://www.typescriptlang.org/) is a typed superset of JavaScript that compiles to plain JavaScript.
 
-Project development uses Microsoft Visual Studio Code (https://code.visualstudio.com/) editor which includes language support for Typescript. The actual TypeScript compiler must be installed separately (<https://code.visualstudio.com/docs/languages/typescript>).
+Project development uses the Microsoft Visual Studio Code (https://code.visualstudio.com/) editor which includes language support for Typescript. The actual TypeScript compiler must be installed separately (<https://code.visualstudio.com/docs/languages/typescript>).
 
-The optional explicit specifaction of types in TypeScript allows the compiler to catch errors rather than have things fail at runtime.
+The optional explicit specifiction of types in TypeScript allows the compiler to catch errors rather than have things fail at runtime.
 
 Most important, TypeScript defines a syntax for class creation that is understandable by traditional Object Oriented Developers. 
 
