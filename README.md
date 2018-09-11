@@ -55,7 +55,7 @@ Note: auto scrolling is useful in teaching or presentation situations.
 
 The __Custom Navigation Control Image__ operates as in a standard OpenSeadragon viewer. What differs here is the height of the navigation control image is fixed at a readable height, and the width varies based on the aspect ratio of the scroll image. This eliminates the problem of the navigation control image being so thin it is unusable.
 
-__Annotations__ are implemented as a title area that when clicked toggles display the full text of the annotation.
+__Annotations__ are implemented as a title area that when clicked toggles display of the full text of the annotation.
 
 The __prev scroll__, __next scroll__ and __show scroll with id:7137966__ buttons at the top of the page are external to the HandscrollViewer window.  The __prev scroll__ and __next scroll__ buttons open the previous or next scroll image in the current list of scroll image objects.  The __show scroll with id:7137966__ opens the scroll with id 7137966 in the current list of scroll image objects. (See the __DZI Images Metadata Objects Array `siteDziImages`__ section below).  
 
@@ -69,7 +69,7 @@ Below is a screenshot of the bottom of the demonstration website page showing tw
 
 Refer to the files in the `demo/`directory of this project. 
 
-The following files should be viewed in a text or program editor:
+The following files can be viewed in a text or program editor:
 
 ```
 HandscrollViewerDemo1.html
@@ -79,9 +79,11 @@ HandscrollViewerDemo1DziImages.js
 HandscrollViewerDemo1Annotations.js
 ```
 
-`HandscrollViewerDemo1.html` is the HTML code of the demonstration web page which contains three HandscrollViewer Windows.
-`HandscrollViewerDemo1DziImages.js` defines the array of image metadata objects which define the scroll images available to the current website. 
-`HandscrollViewerDemo1Annotations.js` defines the array of annotation metadata objects which define the annotations available to the images in the current website.
+`HandscrollViewerDemo1.html` is the HTML code of the demonstration web page which contains three HandscrollViewer windows.
+
+`HandscrollViewerDemo1DziImages.js` defines the array of image metadata objects which define the scroll images available to the current website.
+
+`HandscrollViewerDemo1Annotations.js` defines the array of annotation metadata objects which define the annotations available for the images in the current website.
 
 
 The website implementation also depends on the following directories:
@@ -94,7 +96,7 @@ DZIImages
 buttonImages
 ```
 
-The `openseadragon-bin-2.2.1` directory contains OpenSeadragon JavaScript code and data needed by HandscrollViewer class.  __Note: this version of OpenSeadragon is the only version tested with HandscrollViewer.__
+The `openseadragon-bin-2.2.1` directory contains OpenSeadragon JavaScript code and data needed by the HandscrollViewer class.  __Note: this version of OpenSeadragon is the only version tested with HandscrollViewer.__
 
 The `DZIImages` directory contains the DZI image folders of the scroll images available in the demonstation website. See the __DZI Image Notes__ section below.
 
@@ -124,7 +126,7 @@ Below is the HTML code from the demonstration website that includes the JavaScri
 
 
 
-### Defining DIV areas for HandscrollViewer Windows
+### Defining HTML DIV areas for HandscrollViewer Windows
 
 Three HTML DIV areas for HandscrollViewer windows are defined in the demonstration website page. Each viewer DIV has a unique `id`.
 
@@ -190,7 +192,7 @@ demoHandscrollViewer1.setAutoScrollSpeedSetting(10.0);
 
 ```
 
-Three variables are created to reference the three HandsrollViewer objects that will be created.
+Three variables are created to reference the three HandscrollViewer objects that will be created.
 
 On the `window.onload` event the three HandscrollViewer windows are created using the HandscrollViewer class constuctor method.
 
@@ -251,7 +253,7 @@ Each DZI image object contains four properties as describe below:
 
 ### Annotations Metadata Objets Array `siteAnnotations`
 
-The HanscrollViewer class requires that an array named `siteAnnotation` of annotation metadata object literals exist. Each annotation metadata object literal defines the necessary information to display an annotation for a given scroll. Each scroll image, identified by a scroll image id, that has annotations will have an array of annotation objects. 
+The HanscrollViewer class requires that an array named `siteAnnotations` of annotation metadata object literals exist. Each annotation metadata object literal defines the necessary information to display an annotation for a given scroll. Each scroll image, identified by a scroll image id, that has annotations will have an array of annotation objects. 
 
 The scroll image id in the `siteAnnotations` array should match the correct scroll image id in the `siteDziImages` array.
 
