@@ -1,6 +1,6 @@
 # HandscrollViewer-OpenSeadragon-Extension
 
-The HandscrollViewer-OpenSeadragon-Extension project implements a high level API specifically for viewing Asian handscrolls. The API is implemented in a javascript class __HandscrollViewer__ that extends the OpenSeadragon image viewer class.  See <http://openseadragon.github.io/>.
+The HandscrollViewer-OpenSeadragon-Extension project implements a high level API specifically for viewing Asian handscrolls. The API is implemented in a JavaScript class __HandscrollViewer__ that extends the OpenSeadragon image viewer class.  See <http://openseadragon.github.io/>.
 
 Asian handscrolls are very wide paintings normally viewed from the right edge to left edge as the scroll is unrolled. The major use case for the HandscrollViewer class is pedagogical, and as such special features such as annotations and auto scroll display are included.
 
@@ -53,9 +53,9 @@ __Custom Control Buttons__ added in addition to standard OpenSeadragon buttons i
 
 Note: auto scrolling is useful in teaching or presentation situations.
 
-The __Custom Navigation Control Image__ operates as in a standard OpenSeadragon viewer. What differs here is the height of the navigation control image is fix at a readable height, and the width varies based on the aspect ratio of the scroll image. This eliminates the problem of the navigation control image being so thin it is unusable.
+The __Custom Navigation Control Image__ operates as in a standard OpenSeadragon viewer. What differs here is the height of the navigation control image is fixed at a readable height, and the width varies based on the aspect ratio of the scroll image. This eliminates the problem of the navigation control image being so thin it is unusable.
 
-Annotations are implemented as a title area that when clicked toggles display the full text of the annotation.
+__Annotations__ are implemented as a title area that when clicked toggles display the full text of the annotation.
 
 The __prev scroll__, __next scroll__ and __show scroll with id:7137966__ buttons at the top of the page are external to the HandscrollViewer window.  The __prev scroll__ and __next scroll__ buttons open the previous or next scroll image in the current list of scroll image objects.  The __show scroll with id:7137966__ opens the scroll with id 7137966 in the current list of scroll image objects. (See the __DZI Images Metadata Objects Array `siteDziImages`__ section below).  
 
@@ -79,7 +79,7 @@ HandscrollViewerDemo1DziImages.js
 HandscrollViewerDemo1Annotations.js
 ```
 
-`HandscrollViewerDemo1.html` is the HTML file demonstration web page which contains three HandscrollViewer Windows.
+`HandscrollViewerDemo1.html` is the HTML code of the demonstration web page which contains three HandscrollViewer Windows.
 `HandscrollViewerDemo1DziImages.js` defines the array of image metadata objects which define the scroll images available to the current website. 
 `HandscrollViewerDemo1Annotations.js` defines the array of annotation metadata objects which define the annotations available to the images in the current website.
 
@@ -94,9 +94,9 @@ DZIImages
 buttonImages
 ```
 
-The `openseadragon-bin-2.2.1` directory contains OpenSeadragon javascript code and data needed by HandscrollViewer.  __Note: this version of OpenSeadragon is the only version tested with HandscrollViewer.__
+The `openseadragon-bin-2.2.1` directory contains OpenSeadragon JavaScript code and data needed by HandscrollViewer class.  __Note: this version of OpenSeadragon is the only version tested with HandscrollViewer.__
 
-The `DZIImages` directory contains the DZI image folders of the scroll images available in the demonstation website.
+The `DZIImages` directory contains the DZI image folders of the scroll images available in the demonstation website. See the __DZI Image Notes__ section below.
 
 The `buttonImages` directory contains the custom button images needed by HandscrollViewer.  __Note: the location of the custom button images is specified in the HandscrollViewer public property `prefixScrollUrl`.__
 
@@ -104,7 +104,7 @@ The `buttonImages` directory contains the custom button images needed by Handscr
 
 ### Including Files and Folders Needed by HandscrollViewer
 
-Below is the HTML code from the demonstration website that includes the javascript and data files for HandscrollViewer:
+Below is the HTML code from the demonstration website that includes the JavaScript and data files needed by HandscrollViewer:
 
 ```
 
@@ -126,7 +126,7 @@ Below is the HTML code from the demonstration website that includes the javascri
 
 ### Defining DIV areas for HandscrollViewer Windows
 
-Three DIV areas for HandscrollViewer windows are defined in the demonstration website page. Each viewer DIV has a unique `id`.
+Three HTML DIV areas for HandscrollViewer windows are defined in the demonstration website page. Each viewer DIV has a unique `id`.
 
 The single viewer DIV at the top of the page is shown below:
 
@@ -209,7 +209,7 @@ Note: the last HandscrollViewer instantiated receives focus.
 
 ### DZI Images Metadata Objects Array `siteDziImages`
 
-The HanscrollViewer class requires that an array of DZI image metadata object literals exist referenced by a variable named `siteDziImages`.  Each DZI image metadata object literal defines the necessary information about each scroll image that can be displayed in the current website.
+The HanscrollViewer class requires that an array named `siteDziImages` of DZI image metadata object literals exist.  Each DZI image metadata object literal defines the necessary information about each scroll image that can be displayed in the current website.
 
 In the demonstration website the `siteDziImages` array is defined in the HandscrollViewerDemo1DziImages.js file.  The beginning of the array is shown below:
 
@@ -241,7 +241,7 @@ Each DZI image object contains four properties as describe below:
 
 * `Id` a unique string the identifies the DZI image of a scroll.  Used by HandscrollViewer to specify a unique scroll image to display.
 
-* `Url` a url string the specifies the location of the scroll's DZI image directory. The url can be a relative or or absolute address. 
+* `Url` a url string that specifies the location of the scroll's DZI image directory. The url can be a relative or an absolute address. 
 
 * `Height` the height in number of pixels of the scroll image. Must be correct for the image to be displayed properly.
 
@@ -251,11 +251,11 @@ Each DZI image object contains four properties as describe below:
 
 ### Annotations Metadata Objets Array `siteAnnotations`
 
-The HanscrollViewer class requires that an array of annotation metadata object literals exist referenced by a variable named `siteAnnotation`. Each annotation metadata object literal defines the necessary information to display an annotation for given. Each scroll image, identified by a scroll image id, that has annotations will have an array of annotation objects. 
+The HanscrollViewer class requires that an array named `siteAnnotation` of annotation metadata object literals exist. Each annotation metadata object literal defines the necessary information to display an annotation for a given scroll. Each scroll image, identified by a scroll image id, that has annotations will have an array of annotation objects. 
 
-The scroll image id in the `siteAnnotations` array should match the scroll image id in the `siteDziImages` array.
+The scroll image id in the `siteAnnotations` array should match the correct scroll image id in the `siteDziImages` array.
 
-If a scroll image does not have any annotations an entry the `siteAnnotations` array DOES NOT have to exits.  If none of the scroll images in the website have annotations, then `siteAnnotations` can refer to an emply array.
+If a scroll image does not have any annotations, an entry in the `siteAnnotations` array DOES NOT have to exits.  If none of the scroll images in the website have annotations, then `siteAnnotations` should refer to an empty array.
 
 In the demonstration website the `siteAnnotations` array is defined in the HandscrollViewerDemo1Annotations.js file.  The beginning of the array is shown below:
 
@@ -302,7 +302,7 @@ An annotation object defines a single annotation located on a scroll image.  Eac
 
 ### Annotation Creation Aide
 
-__Simultaneously pressing the `alt` key and the `control` key, then clicking on a scroll image__ in a Handscroll viewer window will the display the OpenSeadragon viewport coordinates of the location clicked an an alert dialog.  Also a temporary test annotation will be created to verify if the annotation location is acceptable.
+__Simultaneously pressing the `alt` key and the `control` key, then clicking on a scroll image__ in a HandscrollViewer window will display an alert dialog with the OpenSeadragon viewport coordinates of the click location.  Also a temporary test annotation will be created to verify if the annotation location is acceptable.
 
 When creating an annotation for a scroll, identifying the annotation location in OpenSeadragon viewport coordinates is not readily discernable.
 
@@ -312,7 +312,7 @@ The HandscrollViewer implementation provides this convenient method for obtainin
 
 ### DZI Image Notes
 
-The OpenSeadragon (and HandscrollViewer) enable effective interactive viewing of high-resolution 'zoomable' images encoded in the [DZI (Deep Zoom Image) format](https://en.wikipedia.org/wiki/Deep_Zoom).
+The OpenSeadragon JavaScript class (used by HandscrollViewer class) enables effective interactive viewing of high-resolution 'zoomable' images encoded in the [DZI (Deep Zoom Image) format](https://en.wikipedia.org/wiki/Deep_Zoom).
 
 Normally handscroll images are stored in large high-resolution TIFF format files.
 
@@ -338,7 +338,7 @@ The __TypeScript source code__ for the HandscrollViewer class is located at `src
 
 [TypeScript](https://www.typescriptlang.org/) is a typed superset of JavaScript that compiles to plain JavaScript.
 
-Project development uses the Microsoft Visual Studio Code (https://code.visualstudio.com/) editor which includes language support for Typescript. The actual TypeScript compiler must be installed separately (<https://code.visualstudio.com/docs/languages/typescript>).
+Project development uses the Microsoft Visual Studio Code (https://code.visualstudio.com/) editor which includes language support for TypeScript. The actual TypeScript compiler must be installed separately (<https://code.visualstudio.com/docs/languages/typescript>).
 
 The optional explicit specifiction of types in TypeScript allows the compiler to catch errors rather than have things fail at runtime.
 
@@ -346,11 +346,11 @@ Most important, TypeScript defines a syntax for class creation that is understan
 
 ### TypeDoc Source Code Documentation
 
-The HandscrollViewer source code documentation generated by the [TypeDoc](https://typedoc.org/) documentation generator is located at `doc/` in this project folder.  The documentation is provided as a website at `docs/index.html`.
+The HandscrollViewer source code documentation generated by the [TypeDoc](https://typedoc.org/) documentation generator is located at `doc/` in this project folder.  The HandscrollViewer class documentation is provided as a website at `docs/index.html`.
 
 TypeDoc is an API documentation generator, similar to JSDoc, but for TypeScript projects where it takes advantage of the type annotations and inference in the language to assist in the documentation creation. 
 
-The HandscrollViewer documentation website includes detailed information on the HandscrollViewer class properties, constructor, and public and private methods.
+The HandscrollViewer class documentation website includes detailed information on the HandscrollViewer class properties, constructor, and public and private methods.
 
 
 
