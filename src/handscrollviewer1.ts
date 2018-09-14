@@ -26,7 +26,7 @@
  *  Window.OpenSeadragon is automatically created when openseadragon.js is included in a website.
  * 
  */
-var OpenSeadragon: any;     // references instatiated OpenSeadragon object
+var OpenSeadragon: any;     // references instantiated OpenSeadragon object
 
 /**
  * 
@@ -47,7 +47,7 @@ var siteDziImages: any;     // references array of DZI image objects available f
 var siteAnnotations: any;   // references array of annotation objects available for the current website's images
 
 /**
- *  Enumeration of horizontal auto scroll directions, either left or right
+ *  Enumeration of horizontal auto scroll directions, either Left or Right
  */
 enum Direction {
     Left = 1,
@@ -70,26 +70,26 @@ enum Direction {
 
  *  * Horizontal auto scroll with custom scroll speed control
 
- *  * Image and annotation information specified in separate metadata for ease of updating
+ *  * Image and annotation information are specified in separate metadata for ease of updating
 
- *  * Standard OpenSeadragon functionality (zoom in and out, image drag, etc.) are fully available
+ *  * Standard OpenSeadragon functionality (zoom in and out, image drag, full screen mode, etc.) are fully available
  * 
  */
 class HandscrollViewer 
 {
     //  Properties of the HandscrollViewer class that extends OpenSeadragon
 
-    /** OpenSeadragon viewer class build for the current image, set in the constructor */
+    /** OpenSeadragon viewer object instantiated for the current image, set in the constructor */
     private viewer: any = null; 
 
-    /** Scroll id of the current image, set in constructor from passed parameter */
+    /** Scroll id of the current image, set in the constructor from passed parameter */
     public  currentScrollId: string = "";
 
-    /** Index of the current image in the siteDziImages array, set in constuctor based on passedScrollId parameter */   
+    /** Index of the current image in the siteDziImages array, set in the constuctor based on passedScrollId parameter */   
     public  currentImageIndex: number = 0;               
     
-     /** Relative path to custom button images, set to value appropriate to your website */      
-    public  prefixScrollUrl = "./buttonImages/";
+     /** Relative path to custom button images, set to a value appropriate for your website */      
+    public  prefixScrollUrl = "./buttonImages/";            // for github demonstration website
     // public  prefixScrollUrl = "/themes/contrib/d8_scrolls_nexus/assets/js/scrollsview-1.0/buttonImages/";   // for scrolls.uchicago.edu site
     
     /** Current auto horizontal scroll direction  */
@@ -140,41 +140,43 @@ class HandscrollViewer
     /** Hide viewer controls OpenSeadragon.Control object */
     private hideControlsOpenSeadragonControl: any = null;
 
-    /** Show viewer controls HTML buttom element  */
+    /** Show viewer controls HTML buttom element */
     private showControlsElement: any = null;
 
     /** Show viewer controls OpenSeadragon.Control object */
     private showControlsOpenSeadragonControl: any = null;
 
-    /** are annotations loaded for current image? flag */
+    /** Are annotations loaded for current image? flag */
     public areAnnotationsLoaded: boolean = false; 
 
     /** Are annotations visible? flag */
-    public areAnnotationsVisible: boolean = true;   // ???
+    public areAnnotationsVisible: boolean = true;
 
     /**
      *  
-     *  Standard OpenSeadragon options object with default settings for this HandscrollViewer object.
+     *  Standard OpenSeadragon options object literal with default settings for this HandscrollViewer object.
      * 
-     *  handscrollViewerOptions is passed a parameter to the OpenSeadragon viewer constructor.
+     *  handscrollViewerOptions is passed as a parameter to the OpenSeadragon class constructor.
      * 
      */
     private handscrollViewerOptions =                                     
     {
-        id: "openseadragon1",               // reset by constructor based on passed passedSeadragonDivId parameter    
+        /** Reset by HandscrollViewer constructor based on passed passedSeadragonDivId parameter */
+        id: "openseadragon1", 
     
-        prefixUrl: "./openseadragon-bin-2.2.1/images/",     // default location of standard seadragon images
+        /** Default location of standard OpenSeadragon images */
+        prefixUrl: "./openseadragon-bin-2.2.1/images/",
     
         navigationControlAnchor: OpenSeadragon.ControlAnchor.TOP_LEFT,
         showNavigator: true,
         navigatorPosition: 'ABSOLUTE',      // set to absolute position to the right of the control button in upper left corner
-        navigatorTop: "3px",
+        navigatorTop: "3px",                // navigation control position and default size
         navigatorLeft: "320px", 
         navigatorHeight: "30px",   
         navigatorWidth: "500px",            // width of navigation contorl will be reset in constructor based on the aspect ratio of current image
         
         controlsFadeDelay: 0,               // no delay for controls fade when mouse moves off image window
-        controlsFadeLength: 1000,           // 1 second controls fade time
+        controlsFadeLength: 1000,           // controls fade out time 1 second
         
         homeFillsViewer: true,              // initial view and home view fits image to viewer
         minZoomImageRatio: 0.9,             // makes image fill 90% of viewport minimally
@@ -186,17 +188,17 @@ class HandscrollViewer
             Image: 
             {
                 xmlns:    "http://schemas.microsoft.com/deepzoom/2008",
-                Url:       siteDziImages[this.currentImageIndex].Url,       // reset by constructor based on passedScrollId paramenter
-                Format:    "jpeg",                                          // Note: DZI images created with VIPS utility needs jpeg not jpg
+                Url:       siteDziImages[this.currentImageIndex].Url,       // reset by HandscrollViewer based on passedScrollId paramenter
+                Format:    "jpeg",                                          // note: DZI images created with VIPS utility needs jpeg not jpg
                 Overlap:   "1",                                             // standard value for DZI images created with VIPS utility
                 TileSize:  "254",                                           // standard value for DZI images created with VIPS utility
                 Size: 
                 {
-                    Height: siteDziImages[this.currentImageIndex].Height,   // reset in constructor based on passedScrollId paramenter
-                    Width:  siteDziImages[this.currentImageIndex].Width,    // reset in constructor based on passedScrollId parameter
+                    Height: siteDziImages[this.currentImageIndex].Height,   // reset in HandscrollViewer based on passedScrollId paramenter
+                    Width:  siteDziImages[this.currentImageIndex].Width,    // reset in HandscrollViewer based on passedScrollId parameter
                 }
             },
-            overlays: [  ]
+            overlays: [  ]         
         }
     };
 
@@ -228,10 +230,9 @@ class HandscrollViewer
                      
             }
         }
+        //  save the image object index in siteDziImages
         this.currentImageIndex = imageArrayIndex;
 
-        console.log(this.currentImageIndex);
-        
         //  set the current DZI image folder url, and current image height and width in pixels
         this.handscrollViewerOptions.tileSources.Image.Url = siteDziImages[this.currentImageIndex].Url;
         this.handscrollViewerOptions.tileSources.Image.Size.Height = siteDziImages[this.currentImageIndex].Height;
@@ -240,23 +241,25 @@ class HandscrollViewer
         //  save the passed seadragon div id 
         this.handscrollViewerOptions.id = passedOpenSeadragonDivId;
         
-        //  create OpenSeadragon viewer based on current scroll viewer options and save
+        //  create OpenSeadragon viewer object based on current scroll viewer options and save
         this.viewer = OpenSeadragon(this.handscrollViewerOptions);
+        
+        //  add OpenSeadragon event handler to this viewer for 'canvas-click' event
         //
-        //  add OpenSeadragon event handler to this viewer for 'canvas-click' event.
-        //  automatic behavior is to zoom in and center image at click point.
-        //  NOTE: special case for 'canvas-click' while pressing the alt and control keys simultaneously,
-        //  alerts user with click point coordinates and displays test annotation at click location.
-        //  Used only when adding annotation during website development.
+        //  automatic behavior is to zoom in and center image at click point
+        //
+        //  NOTE: special case for 'canvas-click' while pressing the alt and control keys simultaneously
+        //  alerts user with click point coordinates and displays test annotation at click location
+        //  used only when adding annotation during website development
         this.viewer.addHandler('canvas-click', function(event) 
         {
             if (event.quick == true)
             {
                 if (event.originalEvent.ctrlKey && event.originalEvent.altKey) 
                 {
-                    //  special case for click with ctrl and alt keys simultaneously pressed.
-                    //  display test annotation at click location and alert user with click point coordinates.
-                    //  used only during development for defining annotation and their locations.
+                    //  special case for click with ctrl and alt keys simultaneously pressed
+                    //  display test annotation at click location and alert user with click point coordinates
+                    //  used only during development for defining annotation and their locations
                     this.displayTestAnnotationLocation(event.position)                  
                 }
                 else 
@@ -275,18 +278,15 @@ class HandscrollViewer
             }
         }.bind(this));
         
-        // Add OpenSeadragon event handler startup and 'home' button behavior.
-        // After default behavior of scrolling to the center of the scroll image,
-        // then scroll to the right edge of the scroll image.
-        // Finally add annotations if defined.
+        // Add OpenSeadragon event handler startup and 'home' button behavior
         //
-        // Delay to allow default behavior to finish is set to 800 ms.
-        // NOTE: the right edge of an East Asian handscroll is usual viewing starting position.
+        // After default behavior of scrolling to the center of the scroll image
+        // then scroll to the right edge of the scroll image
+        // finally add annotations if defined
+        //
+        // delay to allow default behavior to finish is set to 800 ms
         this.viewer.addHandler('home', function() 
-        {
-            //  go to the right edge of the image on start up or 'home' button selection
-            //  (800 ms delay needed before animating to right edge to allow default behavior to finish)
-            
+        {           
             this.isAutoScrollPaused = true;         // stop auto scroll
             
             //  display left and right auto scroll buttons, hide auto scroll stop buttons
@@ -295,7 +295,7 @@ class HandscrollViewer
             this.autoScrollLeftOpenSeadragonButton.element.style.display = "";
             this.autoScrollRightOpenSeadragonButton.element.style.display = "";
             
-            //  wait 800 ms for default home behavior to finish, 
+            //  wait 800 ms for default home behavior to finish 
             //  then do animated scroll to the right edge of the scroll image
             setTimeout(this.gotoRightEdge.bind(this), 800);
            
@@ -303,9 +303,9 @@ class HandscrollViewer
             setTimeout(this.addAllAnnotations.bind(this), 1500);            
         }.bind(this));
         
-        //  start possible animation for auto horizontal scroll left or right.
-        //  callback method initiated with javascript __requestAnimationFrame__ method.
-        //  frameAutoHorizontalScroll(timestamp) will be called immediately prior to a new frame being displayed.
+        //  start possible animation for auto horizontal scroll left or right
+        //  callback method initiated with javascript requestAnimationFrame method
+        //  frameAutoHorizontalScroll(timestamp) will be called immediately prior to a new frame being displayed
         requestAnimationFrame(this.frameAutoHorizontalScroll.bind(this));
     
         //  wait 800 ms for default home behavior to finish then move to right edge of image
@@ -407,13 +407,13 @@ class HandscrollViewer
         this.showControlsOpenSeadragonControl = new OpenSeadragon.Control(this.showControlsElement, {autoFade:false, anchor:OpenSeadragon.ControlAnchor.TOP_RIGHT }, this.viewer.controls.topleft);
         this.showControlsOpenSeadragonControl.element.style.display = "none";
         
-        //  adjust width of navigator control based on current image aspect ratio.
-        //  navigator position and height are defined in handscrollViewerOptions attribute above
+        //  adjust width of navigator control based on current image aspect ratio
+        //  navigator position and height are defined in handscrollViewerOptions property above
         this.viewer.navigatorWidth = Math.floor(30.0 * (+siteDziImages[this.currentImageIndex].Width / +siteDziImages[this.currentImageIndex].Height))   + "px";    
         this.viewer.navigator.element.style.width = this.viewer.navigatorWidth;
         
-         //  set focus to current image viewer window
-         (<HTMLElement>document.getElementById(this.handscrollViewerOptions.id).querySelector('.openseadragon-canvas')).focus();   
+        //  set focus to current image viewer window
+        (<HTMLElement>document.getElementById(this.handscrollViewerOptions.id).querySelector('.openseadragon-canvas')).focus();   
     }
 
 
@@ -459,12 +459,12 @@ class HandscrollViewer
     private buildShimDivElement(): HTMLElement 
     {
         let shimDiv = document.createElement("div");
-        //
+        
         shimDiv.style.width = "10px";
         shimDiv.style.height = "34px";
         shimDiv.style.backgroundColor = "rgba(0,0,0,0)";
         shimDiv.style.zIndex = "100";
-        //
+        
         return shimDiv;
     }
 
@@ -512,11 +512,7 @@ class HandscrollViewer
         let tmpImageElement = document.createElement("img");
         tmpImageElement.setAttribute("src", this.prefixScrollUrl + "ctrlshow_rest.png")
         showControlsDiv.appendChild(tmpImageElement);
-                 
-        showControlsDiv.onmouseenter = function () { this.style.backgroundImage = "url(this.prefixScrollUrl + 'ctrlshow_hover.png')"; };
-        showControlsDiv.onmouseleave = function () { this.style.backgroundImage = "url(this.prefixScrollUrl + 'ctrlshow_rest.png')"; };
-        showControlsDiv.onmousedown = function () { this.style.backgroundImage = "url(this.prefixScrollUrl + 'ctrlshow_pressed.png')"; };
-        showControlsDiv.onmouseup = function () { showControlsDiv.style.backgroundImage = "url(this.prefixScrollUrl + 'ctrlshow_hover.png')"; };
+
         showControlsDiv.style.width = "35px";
         showControlsDiv.style.height = "36px";
         showControlsDiv.style.zIndex = "100";
@@ -527,16 +523,17 @@ class HandscrollViewer
     /**
      * 
      *  Private method that alerts the user with the current click location coordinates in OpenSeadragon point units.
-     *  Also, places temporary test annotation at the click location on the scroll image being displayed.
+     *  Also, places a temporary test annotation at the click location on the scroll image being displayed.
+     * 
      *  Test annotation's upper right corner is placed at the click location.
      * 
      *  Used to determine annotation locations in the required Seadragon point uits.
      * 
-     *  Method is initiated when the user clicks an image while pressing the alt and control keys simultaneously.
+     *  Method is initiated when the user clicks an image while pressing the __alt__ and __control__ keys simultaneously.
      * 
-     *  Used only when adding annotation during website development.
+     *  Used only when adding annotations during website development.
      * 
-     *  Paramenter enventPosition is the location of canvas click on current scroll viewer HTML element.
+     *  Paramenter enventPosition is the location of the canvas click on the current scroll viewer HTML element.
      * 
      */
     private displayTestAnnotationLocation(eventPosition)
@@ -552,7 +549,7 @@ class HandscrollViewer
         //  get viewport coordinates of click event position       
         var viewportPoint1 = this.viewer.viewport.viewerElementToViewportCoordinates(eventPosition);
                    
-        // add runtime div overlay with test annotation display      
+        //  add runtime div overlay with test annotation display      
         var divOverlayContainer = document.createElement('div');
         divOverlayContainer.setAttribute('id', 'test-div-overlay');
 
@@ -581,7 +578,7 @@ class HandscrollViewer
         divOverlayMainText.style.backgroundColor = 'rgba(255,255,255,0.8)';
         divOverlayMainText.style.fontSize = '11px';
         divOverlayMainText.style.color = 'black';
-        divOverlayMainText.style.width = '150px';
+        divOverlayMainText.style.width = '144px';
         divOverlayMainText.style.padding = '6px';
         divOverlayMainText.style.textAlign = 'left';
 
@@ -624,11 +621,11 @@ class HandscrollViewer
 
     /**
      * 
-     *  Public method that displays next scroll (after the currently displayed scroll defined in siteDziImages array).
+     *  Public method that displays the next scroll (after the currently displayed scroll defined in siteDziImages array).
      * 
-     *  Wrap to beginning of siteDziImage array if currently at end of array.
+     *  Wrap to the beginning of siteDziImage array if currently at the end of the array.
      * 
-     *  Current image is removed and new image is displayed in the current viewer display.
+     *  Current image is removed and the new image is displayed in the current viewer display.
      * 
      */
     public displayNextScroll() 
@@ -648,7 +645,7 @@ class HandscrollViewer
         //  set navigator width based on current image aspect ratio
         this.viewer.navigatorWidth = Math.floor(30.0 * (+siteDziImages[this.currentImageIndex].Width / +siteDziImages[this.currentImageIndex].Height))   + "px";
  
-        // show button and navigation controls if hidden before opening a new image  
+        //  show button and navigation controls if hidden before opening a new image  
         if (this.areControlsHidden === true)
         {
             this.hideControlsToggle();
@@ -672,11 +669,11 @@ class HandscrollViewer
 
     /**
      *  
-     *  Public method that displays previous scroll (before the currently displayed scroll defined in siteDziImages array).
+     *  Public method that displays the previous scroll (before the currently displayed scroll defined in siteDziImages array).
      * 
-     *  Wrap to end of siteDziImage array if currently at beginning of array.
+     *  Wrap to the end of siteDziImage array if currently at the beginning of array.
      * 
-     *  Current image is removed and new image is displayed in current view canvas.
+     *  Current image is removed and the new image is displayed in the current view canvas.
      * 
      */
     public displayPrevScroll() 
@@ -693,10 +690,10 @@ class HandscrollViewer
         this.handscrollViewerOptions.tileSources.Image.Size.Height = siteDziImages[this.currentImageIndex].Height;
         this.handscrollViewerOptions.tileSources.Image.Size.Width = siteDziImages[this.currentImageIndex].Width;
         
-         //  set navigator width based on current image aspect ratio
+        //  set navigator width based on current image aspect ratio
         this.viewer.navigatorWidth = Math.floor(30.0 * (+siteDziImages[this.currentImageIndex].Width / +siteDziImages[this.currentImageIndex].Height))   + "px";
  
-         // show button and navigation controls if hidden before opening a new image 
+        //  show button and navigation controls if hidden before opening a new image 
         if (this.areControlsHidden === true)
         {
             this.hideControlsToggle();
@@ -712,33 +709,25 @@ class HandscrollViewer
         //  open the new image
         this.viewer.open(this.handscrollViewerOptions.tileSources);
 
-         this.viewer.navigator.element.style.width = this.viewer.navigatorWidth;
+        this.viewer.navigator.element.style.width = this.viewer.navigatorWidth;
 
-         //  set focus to current viewer window
-         (<HTMLElement>document.getElementById(this.handscrollViewerOptions.id).querySelector('.openseadragon-canvas')).focus();
+        //  set focus to current viewer window
+        (<HTMLElement>document.getElementById(this.handscrollViewerOptions.id).querySelector('.openseadragon-canvas')).focus();
     }
 
     /**
      * 
      *  Public method that displays the scroll image referenced by the passed scroll id (located in the siteDziImages array).
      * 
-     *  Current image is removed and new image is displayed in current view canvas.
+     *  Current image is removed and the new image is displayed in current view canvas.
      * 
-     *  NOTE: an HTML element with id set to 'errorMessage' will have its innerHTML set to error messages if the element exists on the current page.
-     * 
+     *  Returns false if no scroll image is found. Returns true if scroll image is found.
+     *  
      *  Parameter __passedScrollIdString__ is an id of a scroll object in the siteDziImages array
      *
      */
-    public displayScrollWithId(passedScrollIdString: string)
+    public displayScrollWithId(passedScrollIdString: string): boolean
     {
-        // display the scroll with the passed id
-
-        let errorMessageElement: any = document.getElementById("errorMessage");
-        if (errorMessageElement != null)
-        {
-            errorMessageElement.innerHTML = "&nbsp;";   // clear error message
-        }
-     
         let imageArrayIndex = NaN;
         for (var i = 0; i < siteDziImages.length; i++)
         {
@@ -751,10 +740,7 @@ class HandscrollViewer
 
         if (isNaN(imageArrayIndex))
         {
-            if (errorMessageElement != null)
-            {
-                errorMessageElement.innerHTML = "Scroll id passed was not found: " + passedScrollIdString;    
-            }
+            return false;
         }
         else
         {
@@ -768,7 +754,7 @@ class HandscrollViewer
         
             this.viewer.navigatorWidth = Math.floor(30.0 * (+siteDziImages[this.currentImageIndex].Width / +siteDziImages[this.currentImageIndex].Height))   + "px";
  
-            // show navigation controls before if hidden before opening a new image
+            // show navigation controls if hidden before opening a new image
             if (this.areControlsHidden === true)
             {
                 this.hideControlsToggle();
@@ -781,11 +767,18 @@ class HandscrollViewer
             this.hideAnnotationsOpenSeadragonButton.element.style.display = "";
             this.showAnnotationsOpenSeadragonButton.element.style.display = "none";        
 
-
             this.viewer.open(this.handscrollViewerOptions.tileSources);
         
+            //  adjust the width of the navigation control based on current image aspect ratio
             this.viewer.navigator.element.style.width = this.viewer.navigatorWidth;
+
+            //  show annotations if needed for the current image
             setTimeout(this.showAnnotations.bind(this), 800);
+
+            //  set focus to current viewer window
+            (<HTMLElement>document.getElementById(this.handscrollViewerOptions.id).querySelector('.openseadragon-canvas')).focus();
+
+            return true;
         }
     }
 
@@ -805,6 +798,7 @@ class HandscrollViewer
 
         //  call this frameAutoHorizontalScroll method on the next frame display
         requestAnimationFrame(this.frameAutoHorizontalScroll.bind(this));
+
         //  do nothing is auto horizontal scroll is paused
         if (this.isAutoScrollPaused === true)
         {
@@ -815,7 +809,7 @@ class HandscrollViewer
         let deltaTime = timestamp - this.prevTime;
         this.prevTime = timestamp;
  
-        //  change to increase or descrease speed of horizontal auto scroll
+        //  set scroll speed based on auto scroll speed setting property
         var autoScollSpeedFactor = 0.000001 * this.autoScrollSpeedSetting;  
  
         if ((centerPoint.x < 1.0) && (this.autoHorizontalScrollDirection === Direction.Left))
@@ -1078,7 +1072,7 @@ class HandscrollViewer
      * 
      *  Public method that adds fully defined annotation overlay divs for all the annotations of the current image (if any).
      * 
-     *  The scroll id of the current image is used to find the image's annotation information in the siteAnnotations object array
+     *  The scroll id of the current image is used to find the image's annotation information in the siteAnnotations object array.
      * 
      */
     public addAllAnnotations ()
@@ -1112,7 +1106,7 @@ class HandscrollViewer
                 this.addOneAnnotation(viewportPoint, currentImageAnnotations[i].title, currentImageAnnotations[i].text);
             }
         }
-        //           
+                  
         this.areAnnotationsLoaded = true;  // remember that annotations for current image are loaded
     }
 
@@ -1132,7 +1126,7 @@ class HandscrollViewer
         var divAnnotationTitle = document.createElement('div');
         divAnnotationTitle.setAttribute('id', 'div-annotation-title');
     
-//      TEST USING EXTERNAL CSS TO SET STYLE
+        //  CHANGE TO ALTER ANNOTATION TITLE STYLE
         divAnnotationTitle.style.backgroundColor = 'rgba(128,0,0,0.6)';
         divAnnotationTitle.style.fontSize = '11px';
         divAnnotationTitle.style.color = 'white';
@@ -1144,30 +1138,21 @@ class HandscrollViewer
         divAnnotationTitle.style.borderBottomLeftRadius ='8px';
         divAnnotationTitle.style.borderBottomRightRadius ='8px';                  
 
-//      TEST LATER IF border, padding and margin need to be set to zero ???                      
-//        divAnnotationTitle.border = '0';
-//        divAnnotationTitlee.padding = '0';
-//        divAnnotationTitle.margin = '0';
-
         divAnnotationTitle.innerHTML = '<span class="div-annotation-title">'+ title +'</span>';
                      
         var divAnnotationText = document.createElement('div');
         divAnnotationText.setAttribute('id', 'div-annotation-text');
-          
+ 
+        //  CHANGE TO ALTER ANNOTATION TEXT STYLE
         divAnnotationText.style.backgroundColor = 'rgba(0,0,0,0.2)';
         divAnnotationText.style.fontSize = '11px';
         divAnnotationText.style.color = 'white';
-        divAnnotationText.style.width = '200px';
+        divAnnotationText.style.width = '194px';
         divAnnotationText.style.padding = '6px';
         divAnnotationText.style.textAlign = 'left';                   
         divAnnotationText.style.borderBottomLeftRadius ='8px';
         divAnnotationText.style.borderBottomRightRadius ='8px';                   
         divAnnotationText.style.lineHeight = 'normal';
-//
-//      TEST LATER IF border, padding and margin need to be set to zero ???                    
-//        divAnnotationText.border = '0';
-//        divAnnotationText.padding = '0';
-//        divAnnotationText.margin = '0';
 
         divAnnotationText.innerHTML = '<span>'+ text +'</span>';                 
         divAnnotationText.style.display = 'none';   // initially hidden
@@ -1190,7 +1175,7 @@ class HandscrollViewer
             }
         });
 
-        //  add the annotation to the image viewer display at the passed OpenSeadragon Point,
+        //  add the annotation to the image viewer display at the passed OpenSeadragon Point
         //  top right corner of the overlay will be at the passed Point coordinate           
         this.viewer.addOverlay ({
             element: divOverlayContainer,
