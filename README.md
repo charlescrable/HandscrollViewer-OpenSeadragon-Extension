@@ -4,7 +4,7 @@ The HandscrollViewer-OpenSeadragon-Extension project implements a high level API
 
 Asian handscrolls are very wide paintings normally viewed from the right edge to left edge as the scroll is unrolled. The major use case for the HandscrollViewer class is pedagogical, and as such special features such as annotations and auto scroll display are included.
 
-<https://scrolls.uchicago.edu> is a popular public website that uses the HandscrollViewer class to display high resolution Asian scroll images.
+<https://scrolls.uchicago.edu> is a popular public website that uses the HandscrollViewer class to display high-resolution Asian scroll images.
 
 A __simple demonstration website__ referenced in the following documentation is located at `demo/HandscrollViewerDemo1.html` in this project. Clone or download the project to your local computer.  Open `HandscrollViewerDemo1.html` in your browser. 
 
@@ -344,7 +344,7 @@ Project development uses the Microsoft Visual Studio Code (https://code.visualst
 
 The optional explicit specifiction of types in TypeScript allows the compiler to catch errors rather than have things fail at runtime.
 
-Most important, TypeScript defines a syntax for class creation that is understandable by traditional Object Oriented Developers. 
+Most important, TypeScript defines a syntax for class creation that is understandable by traditional object-oriented developers. 
 
 ### TypeDoc Source Code Documentation
 
